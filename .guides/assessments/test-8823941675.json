@@ -1,0 +1,31 @@
+{
+	"type": "test",
+	"taskId": "test-8823941675",
+	"source": {
+		"name": "Challenge 1 — Coach the assistant",
+		"showName": true,
+		"instructions": "Write and grade your **system prompt** for Bluff City Bikes in the Prompt Lab until it scores **70 or higher**, then click **CHECK IT** to record your grade.\n\nIf you haven't passed yet, this check prints the grader's suggestions — refine your prompt in the Prompt Lab and try again. There is no attempt limit.",
+		"command": "python3 .guides/secure/check_challenge.py 1",
+		"timeoutSeconds": 60,
+		"oneTimeTest": false,
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Advanced Code Test"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "Your grade comes from the Prompt Lab's rubric: role & persona, scope & guardrails, tone, and output rules.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"points": 10,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false
+	}
+}

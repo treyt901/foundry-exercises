@@ -1,0 +1,57 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-5670981243",
+	"source": {
+		"name": "Pick a model: image generation",
+		"showName": true,
+		"instructions": "A marketing team wants to **generate product images from text descriptions**. Which model from the catalog fits that job?",
+		"multipleResponse": false,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "e7a7b174-8aa0-4ca0-89e0-60dd1e279af2",
+				"correct": true,
+				"answer": "DALL·E 3"
+			},
+			{
+				"_id": "e8d73fbe-2374-4706-af61-e6e797bf6f08",
+				"correct": false,
+				"answer": "Phi-4"
+			},
+			{
+				"_id": "61021257-2821-425b-b21e-d5727ac832dc",
+				"correct": false,
+				"answer": "Mistral Large"
+			},
+			{
+				"_id": "d45f4691-a222-4622-b651-196136827a48",
+				"correct": false,
+				"answer": "Whisper"
+			}
+		],
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "DALL·E 3 is a text-to-image model. Phi-4 and Mistral Large are text (chat completion) models, and Whisper is speech-to-text — the catalog's task labels tell you this at a glance.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswerOption": {
+			"type": "Never"
+		},
+		"points": 1,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false,
+		"useMaximumScore": false
+	}
+}

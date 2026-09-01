@@ -1,0 +1,57 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-9037246158",
+	"source": {
+		"name": "Pick a model: speech to text",
+		"showName": true,
+		"instructions": "Your team needs to **transcribe recorded customer phone calls into text**. Use the catalog's search or task filters to find the model designed for this. Which one is it?",
+		"multipleResponse": false,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "dd34ed0e-c5f2-4586-88bb-5265bd73d21b",
+				"correct": true,
+				"answer": "Whisper"
+			},
+			{
+				"_id": "b9128d50-b51a-4d1a-9da1-211e058e4be5",
+				"correct": false,
+				"answer": "GPT-4o mini"
+			},
+			{
+				"_id": "d224864f-0753-4879-87ef-757cda74d5c0",
+				"correct": false,
+				"answer": "DALL·E 3"
+			},
+			{
+				"_id": "fd374b38-6537-4081-a2c4-7e5fb90070b3",
+				"correct": false,
+				"answer": "text-embedding-3-large"
+			}
+		],
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "Whisper's model card lists speech recognition / audio transcription as its task. Filtering the catalog by task (e.g. *speech*) is the fastest way to answer \"which model should I use for X?\" questions.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswerOption": {
+			"type": "Never"
+		},
+		"points": 1,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false,
+		"useMaximumScore": false
+	}
+}

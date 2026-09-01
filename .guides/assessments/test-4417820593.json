@@ -1,0 +1,31 @@
+{
+	"type": "test",
+	"taskId": "test-4417820593",
+	"source": {
+		"name": "Challenge 2 — Sharpen the ask",
+		"showName": true,
+		"instructions": "Rewrite the vague recycling request as a strong **user prompt** in the Prompt Lab until it scores **70 or higher**, then click **CHECK IT** to record your grade.\n\nIf you haven't passed yet, this check prints the grader's suggestions — refine and re-run. There is no attempt limit.",
+		"command": "python3 .guides/secure/check_challenge.py 2",
+		"timeoutSeconds": 60,
+		"oneTimeTest": false,
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Advanced Code Test"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "The rubric rewards context & purpose, one clear task, format & length constraints, and quality cues.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"points": 10,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false
+	}
+}

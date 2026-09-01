@@ -1,0 +1,57 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-6154302897",
+	"source": {
+		"name": "Deployment options",
+		"showName": true,
+		"instructions": "Open any large chat model's card (for example **GPT-4o mini** or **Mistral Large**) and look at its **deployment options**. Which option means *Microsoft hosts the model for you and you pay per use, without managing any servers*?",
+		"multipleResponse": false,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "6ed18e4c-8c3a-443a-a91e-3d67e8fa6ae7",
+				"correct": true,
+				"answer": "Serverless / standard pay-as-you-go deployment"
+			},
+			{
+				"_id": "2c716fd1-0e13-4bb7-9f92-25ffe1fa5a8e",
+				"correct": false,
+				"answer": "Managed compute — you reserve and pay for dedicated virtual machines"
+			},
+			{
+				"_id": "b1479cb6-ee34-43ca-b041-b235ea68c8d3",
+				"correct": false,
+				"answer": "Downloading the model weights and running them on your laptop"
+			},
+			{
+				"_id": "ad9c9cac-7f49-4740-bde2-0f44767abaff",
+				"correct": false,
+				"answer": "Printing the model card and mailing it to Microsoft"
+			}
+		],
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "With serverless (standard / pay-as-you-go) deployments you just call an API and pay per token — Microsoft runs the infrastructure. Managed compute gives you dedicated VMs for models that need them (more control, more cost). Model cards list which options each model supports.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswerOption": {
+			"type": "Never"
+		},
+		"points": 1,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false,
+		"useMaximumScore": false
+	}
+}

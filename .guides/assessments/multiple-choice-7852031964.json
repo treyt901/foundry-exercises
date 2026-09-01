@@ -1,0 +1,57 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-7852031964",
+	"source": {
+		"name": "Who publishes Llama?",
+		"showName": true,
+		"instructions": "Now search the catalog for **Llama** models. Which company publishes the Llama family?",
+		"multipleResponse": false,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "ae60596e-006e-4a35-8be9-d722c102b1ea",
+				"correct": true,
+				"answer": "Meta"
+			},
+			{
+				"_id": "9eea0059-a55d-4d71-b197-d3020eebe796",
+				"correct": false,
+				"answer": "Google"
+			},
+			{
+				"_id": "2ce12495-7ca7-4a60-a90d-90bc5a576c2f",
+				"correct": false,
+				"answer": "Microsoft"
+			},
+			{
+				"_id": "69b55e39-7e1b-4ef6-9df0-04f242681996",
+				"correct": false,
+				"answer": "Cohere"
+			}
+		],
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "The Llama collection in the catalog is published by Meta. Notice that the catalog brings together models from many companies, not just Microsoft and OpenAI.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswerOption": {
+			"type": "Never"
+		},
+		"points": 1,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false,
+		"useMaximumScore": false
+	}
+}

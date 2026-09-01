@@ -1,0 +1,57 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-3418509276",
+	"source": {
+		"name": "Who publishes Phi?",
+		"showName": true,
+		"instructions": "In the model catalog, search for **Phi-4** and open its model card. Which company publishes the Phi family of small language models?",
+		"multipleResponse": false,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "3afa7d1c-9cdc-4f81-83aa-9fa8b99417b1",
+				"correct": true,
+				"answer": "Microsoft"
+			},
+			{
+				"_id": "b3047d04-c84e-495d-a280-d548ac764cc5",
+				"correct": false,
+				"answer": "OpenAI"
+			},
+			{
+				"_id": "78610d8f-2acc-49a3-b762-baf81961e93f",
+				"correct": false,
+				"answer": "Meta"
+			},
+			{
+				"_id": "1abfc6ee-f9fc-495a-b439-e64cd3b4c1f7",
+				"correct": false,
+				"answer": "Mistral AI"
+			}
+		],
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "Every model card lists its publisher near the model name. Phi is Microsoft's family of small language models (SLMs) — small enough to run cheaply, still strong at reasoning tasks.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswerOption": {
+			"type": "Never"
+		},
+		"points": 1,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false,
+		"useMaximumScore": false
+	}
+}

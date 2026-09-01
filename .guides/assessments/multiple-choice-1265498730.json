@@ -1,0 +1,57 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-1265498730",
+	"source": {
+		"name": "What does an embeddings model do?",
+		"showName": true,
+		"instructions": "Search the catalog for **text-embedding-3-small** and open its model card. Based on the card, what does this model do?",
+		"multipleResponse": false,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "78cb5958-735f-4978-90f5-fa9572153dd7",
+				"correct": true,
+				"answer": "Converts text into numeric vectors that can be used for search and similarity comparisons"
+			},
+			{
+				"_id": "35172faf-3b68-4e22-884c-d47ba5cb1763",
+				"correct": false,
+				"answer": "Generates images from text descriptions"
+			},
+			{
+				"_id": "f49f976c-2561-4f0f-88cf-76ed7e5aa964",
+				"correct": false,
+				"answer": "Holds conversations and answers questions in natural language"
+			},
+			{
+				"_id": "56f63a16-b381-42c8-acdf-843d5a29e1d4",
+				"correct": false,
+				"answer": "Transcribes spoken audio into written text"
+			}
+		],
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "The card lists its inference task as *embeddings*: turning text into vectors (long lists of numbers) so that similar meanings end up numerically close together — the foundation of semantic search and RAG. Notice you can also filter the whole catalog by inference task.",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswerOption": {
+			"type": "Never"
+		},
+		"points": 1,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": false,
+		"useMaximumScore": false
+	}
+}

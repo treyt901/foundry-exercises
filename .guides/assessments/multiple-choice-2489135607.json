@@ -1,0 +1,57 @@
+{
+	"type": "multiple-choice",
+	"taskId": "multiple-choice-2489135607",
+	"source": {
+		"name": "Who's in the catalog?",
+		"showName": true,
+		"instructions": "Browse the catalog's **collections / publisher filter**. Which of the following actually publish models in the Azure AI Foundry model catalog? *(Select all that apply.)*",
+		"multipleResponse": true,
+		"isRandomized": true,
+		"answers": [
+			{
+				"_id": "0a0fd6f7-a1c4-4063-b887-1a7a7eef8838",
+				"correct": true,
+				"answer": "Microsoft"
+			},
+			{
+				"_id": "559a8195-f64d-4d70-9021-ac2e5fdaf067",
+				"correct": true,
+				"answer": "Meta"
+			},
+			{
+				"_id": "84023e02-4a55-485f-b13c-70ea0f283537",
+				"correct": true,
+				"answer": "Mistral AI"
+			},
+			{
+				"_id": "40e1b687-abef-48df-b6a7-573b31336c6b",
+				"correct": false,
+				"answer": "Fabrikam AI"
+			}
+		],
+		"metadata": {
+			"tags": [
+				{
+					"name": "Assessment Type",
+					"value": "Multiple Choice"
+				}
+			],
+			"files": [],
+			"opened": []
+		},
+		"bloomsObjectiveLevel": "",
+		"learningObjectives": "",
+		"guidance": "Microsoft, Meta, and Mistral AI all have collections in the catalog (along with OpenAI, Cohere, and others). \"Fabrikam\" is a fictional company Microsoft uses in documentation examples — you won't find it publishing models!",
+		"showGuidanceAfterResponseOption": {
+			"type": "Always"
+		},
+		"maxAttemptsCount": 3,
+		"showExpectedAnswerOption": {
+			"type": "Never"
+		},
+		"points": 2,
+		"incorrectPoints": 0,
+		"arePartialPointsAllowed": true,
+		"useMaximumScore": false
+	}
+}
