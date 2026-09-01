@@ -1,5 +1,9 @@
 # Challenge 1 — Coach the assistant
 
+> ⚠️ If a banner on the left says the app isn't configured, go back to the **Set up your endpoint** page near the start of this guide, finish your `.env`, then press **Restart the Prompt Lab** below.
+
+{🔄 Restart the Prompt Lab}(bash lab.sh restart)
+
 **Skill: writing a system prompt.** A *system prompt* is the standing instruction a model receives before any user says anything. It's how an app turns a general-purpose model into *its* assistant: it sets the role, the rules, and the personality.
 
 ### Your job
@@ -18,5 +22,3 @@ Your prompt is tested with **two** messages — a normal customer question, and 
 ### Pass it
 
 Press **▶ Run & grade my prompts**, read the feedback, refine, repeat. When the scorecard shows **PASSED (70+)**, this challenge is done — your best score is saved automatically and counts toward your grade when you mark the assignment complete.
-
-> Changed something in `.env`? {🔄 Restart the Prompt Lab}(bash lab.sh restart)

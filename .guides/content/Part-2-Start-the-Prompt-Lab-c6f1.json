@@ -10,11 +10,6 @@
 			"path": "#terminal: bash lab.sh start",
 			"panel": 0,
 			"action": "open"
-		},
-		{
-			"path": "#preview: https://{{domain5000}}/challenge/1",
-			"panel": 0,
-			"action": "open"
 		}
 	],
 	"path": [],
