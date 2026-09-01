@@ -1,0 +1,35 @@
+# Challenge 1 — Coach the assistant
+
+**Skill: writing a system prompt.** A *system prompt* is the standing
+instruction a model receives before any user says anything. It's how an app
+turns a general-purpose model into *its* assistant: it sets the role, the
+rules, and the personality.
+
+### Your job
+
+In the Prompt Lab panel, open the **Challenge 1** tab. Write a system prompt
+that turns the model into a support assistant for **Bluff City Bikes**. A good
+system prompt usually covers:
+
+- **Role** — *"You are …"* Who is the assistant? Give it a name and a job.
+- **Scope** — what it should help with, and what to do when asked anything
+  else (decline politely, steer back to the shop).
+- **Tone** — how it should sound for this audience.
+- **Rules** — concrete, checkable output constraints (length, closing line…).
+
+### The twist 👀
+
+Your prompt is tested with **two** messages — a normal customer question, and
+an off-topic request designed to lure the assistant away from its job. Vague
+scope instructions ("be helpful about bikes") tend to fail that second test;
+explicit guardrails ("if asked about anything unrelated to the shop, politely
+decline and offer to help with…") tend to pass it.
+
+### Pass it
+
+Press **▶ Run & grade my prompts**, read the feedback, refine, repeat. When
+your best score is **70+**, record it:
+
+{Check It!|assessment}(test-8823941675)
+
+> Changed something in `.env`? {🔄 Restart the Prompt Lab}(bash lab.sh restart)

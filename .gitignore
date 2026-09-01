@@ -1,0 +1,13 @@
+# Per-student secrets — never commit these.
+.env
+
+# Runtime files created by lab.sh / the Flask app.
+.flask.pid
+.flask.log
+
+# Per-student grading results written by the Prompt Lab.
+results/
+
+# Python
+__pycache__/
+*.pyc

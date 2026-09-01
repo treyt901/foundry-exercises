@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundry Prompt Lab</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Foundry Prompt Lab</h1>
+        <p class="subtitle">
+          Foundry Exercises &middot; Part 2 &middot; Write, run &amp; refine your prompts
+        </p>
+      </header>
+
+      <!-- Shown when the .env file is not configured yet. -->
+      <div id="config-banner" class="banner hidden"></div>
+
+      <!-- Challenge tabs (filled in by app.js). -->
+      <nav id="tabs" class="tabs"></nav>
+
+      <main class="lab">
+        <!-- Left: the challenge brief. -->
+        <section class="pane brief">
+          <h2 id="challenge-title"></h2>
+          <p id="challenge-goal" class="goal"></p>
+          <p id="challenge-scenario" class="scenario"></p>
+
+          <div id="attachment-box" class="attachment hidden">
+            <h3 id="attachment-label"></h3>
+            <pre id="attachment-text"></pre>
+          </div>
+
+          <h3>Your prompt must&hellip;</h3>
+          <ul id="requirements"></ul>
+
+          <h3>How it's graded</h3>
+          <ul id="rubric" class="rubric"></ul>
+        </section>
+
+        <!-- Right: editors + results. -->
+        <section class="pane work">
+          <div id="editor-system" class="editor">
+            <label for="system-prompt">
+              System prompt
+              <span class="hint">the standing instructions the model always gets</span>
+            </label>
+            <textarea
+              id="system-prompt"
+              rows="6"
+              placeholder="You are..."
+            ></textarea>
+          </div>
+
+          <div id="fixed-system" class="fixed hidden">
+            <span class="fixed-tag">Fixed system prompt (provided for you)</span>
+            <pre id="fixed-system-text"></pre>
+          </div>
+
+          <div id="editor-user" class="editor">
+            <label for="user-prompt">
+              User prompt
+              <span class="hint">the message you send to the model</span>
+            </label>
+            <textarea id="user-prompt" rows="6" placeholder=""></textarea>
+          </div>
+
+          <div id="fixed-tests" class="fixed hidden">
+            <span class="fixed-tag">Test messages your system prompt will face</span>
+            <ol id="fixed-tests-list"></ol>
+          </div>
+
+          <div class="actions">
+            <button id="grade-btn" type="button">▶ Run &amp; grade my prompts</button>
+            <span id="status" class="status"></span>
+          </div>
+
+          <div id="results" class="results hidden">
+            <div class="scorecard">
+              <div id="total-badge" class="total">
+                <span id="total-score">0</span><span class="of">/100</span>
+              </div>
+              <div class="score-meta">
+                <span id="pass-chip" class="chip"></span>
+                <span id="pass-note" class="pass-note"></span>
+              </div>
+            </div>
+
+            <div id="score-bars" class="bars"></div>
+
+            <div id="note" class="note hidden"></div>
+
+            <h3>✅ What worked</h3>
+            <ul id="strengths"></ul>
+
+            <h3>🔧 How to refine your prompt</h3>
+            <ul id="improvements"></ul>
+
+            <h3>💬 What the model replied</h3>
+            <div id="transcripts"></div>
+
+            <div id="format-check" class="format-check hidden"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

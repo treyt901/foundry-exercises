@@ -1,0 +1,22 @@
+{
+	"id": "f7b42d6a-5e8c-4f1a-8e3c-9a1b3c4d5e68",
+	"title": "Challenge 3 Structured output",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		},
+		{
+			"path": "#preview: https://{{domain5000}}/",
+			"panel": 0,
+			"action": "open"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "2-panels"
+}

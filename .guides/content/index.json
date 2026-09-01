@@ -1,0 +1,25 @@
+{
+	"title": "Foundry Exercises: Models & Prompts",
+	"theme": "light",
+	"scripts": [],
+	"suppressPageNumbering": true,
+	"useSubmitButtons": true,
+	"useMarkAsComplete": false,
+	"hideMenu": false,
+	"allowGuideClose": false,
+	"collapsedOnStart": false,
+	"hideSectionsToggle": false,
+	"hideBackToDashboard": false,
+	"protectLayout": true,
+	"order": [
+		"Overview-7a1c",
+		"Part-1-The-model-catalog-3f2b",
+		"Part-1-Check-your-knowledge-9d4e",
+		"Part-2-Set-up-your-endpoint-b2a7",
+		"Part-2-Start-the-Prompt-Lab-c6f1",
+		"Challenge-1-Coach-the-assistant-e8d3",
+		"Challenge-2-Sharpen-the-ask-a5c9",
+		"Challenge-3-Structured-output-f7b4",
+		"Wrap-up-d1e6"
+	]
+}

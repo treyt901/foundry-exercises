@@ -1,0 +1,27 @@
+{
+	"id": "c6f13e5a-7d9b-4c2e-9a4f-6b8d0c1e2f35",
+	"title": "Part 2 Start the Prompt Lab",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		},
+		{
+			"path": "#terminal: bash lab.sh start",
+			"panel": 0,
+			"action": "open"
+		},
+		{
+			"path": "#preview: https://{{domain5000}}/",
+			"panel": 0,
+			"action": "open"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "2-panels"
+}

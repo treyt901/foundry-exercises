@@ -1,0 +1,17 @@
+{
+	"id": "9d4e7f2a-1b3c-4d5e-9f6a-7b8c9d0e1f23",
+	"title": "Part 1 Check your knowledge",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "1-panel"
+}

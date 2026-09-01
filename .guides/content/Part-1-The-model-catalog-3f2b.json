@@ -1,0 +1,17 @@
+{
+	"id": "3f2b8c1d-5a6e-4b7f-8d2c-9e0a1b2c3d45",
+	"title": "Part 1 The model catalog",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "1-panel"
+}

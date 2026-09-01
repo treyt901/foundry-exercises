@@ -1,0 +1,8 @@
+# Requires Python 3.8 or newer (the Azure OpenAI SDK dropped 3.6/3.7).
+# See INSTRUCTOR_SETUP.md for moving the Codio box to Python 3.10+.
+#
+# After you install these on the instructor box, you can lock exact versions
+# for the student stack with:   python3 -m pip freeze > requirements.lock.txt
+Flask>=3.0,<4.0
+openai>=1.40,<2.0
+python-dotenv>=1.0,<2.0

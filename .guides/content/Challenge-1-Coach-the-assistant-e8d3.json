@@ -1,0 +1,22 @@
+{
+	"id": "e8d35a7c-9f1b-4e3d-8b5a-7c9e1d2f3a46",
+	"title": "Challenge 1 Coach the assistant",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		},
+		{
+			"path": "#preview: https://{{domain5000}}/",
+			"panel": 0,
+			"action": "open"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "2-panels"
+}

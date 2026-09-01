@@ -1,0 +1,23 @@
+{
+  "commands": {
+    "Prompt Lab": {
+      "Start": {
+        "cmd": "bash lab.sh start",
+        "preview": "Prompt Lab",
+        "reloadPreview": true
+      },
+      "Restart (apply my changes)": {
+        "cmd": "bash lab.sh restart",
+        "preview": "Prompt Lab",
+        "reloadPreview": true
+      },
+      "Stop": {
+        "cmd": "bash lab.sh stop"
+      }
+    },
+    "Set up .env (first time)": "cp -n .env.example .env && echo '.env created - open it and add your Azure OpenAI details.'"
+  },
+  "preview": {
+    "Prompt Lab": "https://{{domain5000}}/"
+  }
+}

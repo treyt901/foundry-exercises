@@ -1,0 +1,17 @@
+{
+	"id": "d1e68c3f-7a9d-4b5e-9c7d-0b2d4e5f6a79",
+	"title": "Wrap up",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "1-panel"
+}

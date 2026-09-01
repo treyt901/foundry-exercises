@@ -1,0 +1,17 @@
+{
+	"id": "7a1c9b2e-4f3d-4e8a-9c1b-2d5e8f7a6b01",
+	"title": "Overview",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "1-panel"
+}

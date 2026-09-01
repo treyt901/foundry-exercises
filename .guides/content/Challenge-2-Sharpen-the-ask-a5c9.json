@@ -1,0 +1,22 @@
+{
+	"id": "a5c97b1e-3d5f-4a7c-9d1b-8e0f2a3b4c57",
+	"title": "Challenge 2 Sharpen the ask",
+	"files": [
+		{
+			"path": "#tabs",
+			"action": "close"
+		},
+		{
+			"path": "#preview: https://{{domain5000}}/",
+			"panel": 0,
+			"action": "open"
+		}
+	],
+	"path": [],
+	"contentType": "markdown",
+	"type": "page",
+	"teacherOnly": false,
+	"closeTerminalSession": true,
+	"learningObjectives": "",
+	"layout": "2-panels"
+}

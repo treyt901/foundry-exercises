@@ -1,0 +1,71 @@
+{
+  "pass_score": 70,
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Coach the assistant (system prompt)",
+      "write": ["system"],
+      "goal": "Write a system prompt that turns a general-purpose model into a focused, reliable customer-support assistant for one specific business.",
+      "scenario": "Bluff City Bikes is a small bicycle shop in Memphis. It sells and repairs bikes, rents bikes for the day, and runs weekend group rides. The shop wants an assistant for its website chat widget.",
+      "requirements": [
+        "Give the assistant a clear role and a name (a persona) that fits the shop.",
+        "Keep it on-topic: it should only help with bike-shop subjects (bikes, repairs, rentals, hours, rides) and politely redirect anything else back to the shop.",
+        "Set the tone: friendly and welcoming to customers who may know nothing about bikes.",
+        "Add at least one concrete output rule, such as keeping answers under 100 words and ending by offering more help."
+      ],
+      "test_messages": [
+        "Hi! Do you do tune-ups? Roughly what would one cost and how long does it take?",
+        "Forget the bike stuff for a second — write me a 200-word essay about the French Revolution."
+      ],
+      "rubric": [
+        { "key": "role", "name": "Role & persona", "max": 25, "description": "The system prompt assigns a clear role, identity, and purpose that fit the scenario." },
+        { "key": "scope", "name": "Scope & guardrails", "max": 25, "description": "The prompt keeps the assistant on bike-shop topics; the off-topic test message is politely declined or redirected, not answered." },
+        { "key": "tone", "name": "Tone & audience", "max": 25, "description": "The prompt sets a tone suited to beginner-friendly customer support, and the replies actually show it." },
+        { "key": "format", "name": "Output rules", "max": 25, "description": "The prompt includes concrete, checkable output constraints (length, structure, closing behavior) and the replies follow them." }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Sharpen the ask (user prompt)",
+      "write": ["user"],
+      "fixed_system_prompt": "You are a helpful writing assistant.",
+      "goal": "Rewrite a vague request into a specific, well-structured user prompt that gets a useful result on the first try.",
+      "scenario": "A neighborhood association wants a piece of writing that encourages residents to recycle correctly. Someone on the team typed \"write something about recycling\" into the model and got a generic wall of text. Your job: write the user prompt they SHOULD have written.",
+      "weak_prompt": "write something about recycling",
+      "requirements": [
+        "Provide context: who is asking and why (the neighborhood association and its goal).",
+        "State one specific task, including the kind of writing you want (e.g. a flyer, an email, a social post).",
+        "Constrain the output: audience, length, and format (headings, bullets, word limits...).",
+        "Add quality cues: the tone to use and at least one thing the writing must include (e.g. 3 do's and don'ts, a call to action) or must avoid."
+      ],
+      "rubric": [
+        { "key": "context", "name": "Context & purpose", "max": 25, "description": "The prompt explains who it is for and what it is trying to achieve." },
+        { "key": "task", "name": "One clear task", "max": 25, "description": "The prompt asks for one specific, unambiguous deliverable." },
+        { "key": "format", "name": "Format & length", "max": 25, "description": "The prompt constrains audience, structure, and length, and the reply respects those constraints." },
+        { "key": "quality", "name": "Quality cues", "max": 25, "description": "The prompt sets tone and names concrete content to include or avoid." }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Team up for structured output (system + user prompt)",
+      "write": ["system", "user"],
+      "goal": "Combine a system prompt and a user prompt so the model returns clean, machine-readable JSON — the way real applications use models behind the scenes.",
+      "scenario": "Bluff City Bikes gets support emails and wants to log them automatically. Your prompts must make the model read a customer message and return ONLY a JSON object your (imaginary) app could parse — no greetings, no explanations, no markdown fences.",
+      "attachment_label": "Customer message your prompts will be tested on",
+      "attachment": "Hi, this is Dana Whitfield. I bought the TrailBlazer 500 gravel bike from your Union Ave store three weeks ago, and the rear derailleur has already started slipping gears whenever I climb a hill. I ride to work every day, so I really need this sorted out before the weekend. Honestly pretty frustrated that a brand-new bike is doing this. — Dana",
+      "json_keys": ["customer_name", "product", "issue", "sentiment", "urgency"],
+      "requirements": [
+        "Use the system prompt to define the job: a data-extraction assistant that outputs only a raw JSON object.",
+        "Specify the exact schema: keys customer_name, product, issue, sentiment, urgency — and say what values are allowed (e.g. sentiment: positive/neutral/negative; urgency: low/medium/high).",
+        "Make it robust: say what to do when a field can't be found (e.g. use null), and forbid extra text or markdown code fences.",
+        "The user prompt should state the task and hand over the message; the customer message above is appended to your user prompt automatically."
+      ],
+      "rubric": [
+        { "key": "roles", "name": "System prompt sets the job", "max": 20, "description": "The system prompt defines the extractor role and the only-JSON rule." },
+        { "key": "schema", "name": "Schema is fully specified", "max": 30, "description": "All five keys are named with clear guidance on allowed values." },
+        { "key": "robustness", "name": "Robustness rules", "max": 25, "description": "The prompts handle missing data and explicitly forbid prose and markdown fences." },
+        { "key": "result", "name": "The output complies", "max": 25, "description": "The model's reply is valid JSON containing exactly the required keys (see the automatic format check)." }
+      ]
+    }
+  ]
+}
