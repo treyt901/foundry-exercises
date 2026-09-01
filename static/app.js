@@ -218,6 +218,18 @@ function renderGrade(data) {
         : "✘ missing keys: " + fc.missing_keys.join(", ")
     );
     if (fc.extra_keys.length) parts.push("⚠ unexpected keys: " + fc.extra_keys.join(", "));
+    const blanks = fc.blank_fields || [];
+    parts.push(
+      blanks.length === 0
+        ? "✔ no blank values"
+        : "✘ blank values: " + blanks.join(", ")
+    );
+    const invalid = fc.invalid_values || [];
+    parts.push(
+      invalid.length === 0
+        ? "✔ values have the right type"
+        : "✘ wrong type or value — " + invalid.join("; ")
+    );
     fcEl.textContent = "Automatic format check — " + parts.join("  ·  ");
     fcEl.classList.remove("hidden");
   } else {

@@ -36,9 +36,12 @@ arrive there, not just this one.
 | JSON wrapped in ``` fences | "Do not use markdown code fences." |
 | Made-up values for missing info | "If a field cannot be determined, use null." |
 | Wrong or extra keys | List the exact keys and allowed values, and say "no other keys". |
+| Blank values (`""`) | "Never leave a value empty — extract the information or use null." |
+| Wrong type or category (`"urgency": 2`, `"urgency": "ASAP"`) | "Every value must be text; sentiment and urgency must be exactly one of the allowed words." |
 
 Watch the **automatic format check** under your results — it tells you
-objectively whether your JSON parsed, and which keys were missing or extra.
+objectively whether your JSON parsed, which keys were missing or extra,
+and whether any value was blank, the wrong type, or outside the allowed list.
 
 ### Pass it
 

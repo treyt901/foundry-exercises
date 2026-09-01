@@ -295,8 +295,42 @@ def run_student_prompts(client, challenge, system_prompt, user_prompt):
     return transcripts
 
 
+def check_field_values(challenge, parsed):
+    """Per-field checks: blank values, wrong types, and disallowed values.
+
+    Driven by the challenge's field_rules ({key: {type, allowed}}). A null is
+    never flagged - it is the sanctioned way to represent missing data - but
+    an empty/whitespace string is blank, a non-string where a string is
+    expected is the wrong type, and a string outside the allowed list (e.g.
+    urgency: "ASAP") is an invalid value.
+    """
+    rules = challenge.get("field_rules") or {}
+    blank_fields = []
+    invalid_values = []
+    for key, rule in rules.items():
+        if key not in parsed:
+            continue  # already reported in missing_keys
+        value = parsed[key]
+        if value is None:
+            continue
+        if rule.get("type") == "string" and not isinstance(value, str):
+            invalid_values.append(
+                f"{key}: expected text, got {type(value).__name__} ({json.dumps(value)})"
+            )
+            continue
+        if isinstance(value, str) and not value.strip():
+            blank_fields.append(key)
+            continue
+        allowed = rule.get("allowed")
+        if allowed and isinstance(value, str) and value.strip().lower() not in allowed:
+            invalid_values.append(
+                f"{key}: \"{value}\" is not one of {'/'.join(allowed)}"
+            )
+    return blank_fields, invalid_values
+
+
 def check_output_format(challenge, transcripts):
-    """For challenges with json_keys: verify the reply is clean JSON."""
+    """For challenges with json_keys: verify the reply is clean, typed JSON."""
     required = challenge.get("json_keys")
     if not required:
         return None
@@ -314,13 +348,18 @@ def check_output_format(challenge, transcripts):
             "reply_is_json_only": False,
             "missing_keys": required,
             "extra_keys": [],
+            "blank_fields": [],
+            "invalid_values": [],
         }
+    blank_fields, invalid_values = check_field_values(challenge, parsed)
     return {
         "required_keys": required,
         "reply_is_valid_json": True,
         "reply_is_json_only": strictly_valid,
         "missing_keys": [k for k in required if k not in parsed],
         "extra_keys": [k for k in parsed if k not in required],
+        "blank_fields": blank_fields,
+        "invalid_values": invalid_values,
     }
 
 

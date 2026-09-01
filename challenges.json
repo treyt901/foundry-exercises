@@ -137,10 +137,37 @@
           "key": "result",
           "name": "The output complies",
           "max": 25,
-          "description": "The model's reply is valid JSON containing exactly the required keys (see the automatic format check)."
+          "description": "The model's reply is valid JSON with exactly the required keys, no blank values, and values of the right type from the allowed lists (see the automatic format check)."
         }
       ],
-      "starter_user_prompt": "Log this customer message for our support system."
+      "starter_user_prompt": "Log this customer message for our support system.",
+      "field_rules": {
+        "customer_name": {
+          "type": "string"
+        },
+        "product": {
+          "type": "string"
+        },
+        "issue": {
+          "type": "string"
+        },
+        "sentiment": {
+          "type": "string",
+          "allowed": [
+            "positive",
+            "neutral",
+            "negative"
+          ]
+        },
+        "urgency": {
+          "type": "string",
+          "allowed": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
     }
   ]
 }
