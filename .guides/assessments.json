@@ -1,478 +1,326 @@
 [
-	{
-		"type": "multiple-choice",
-		"taskId": "multiple-choice-3418509276",
-		"source": {
-			"name": "Who publishes Phi?",
-			"showName": true,
-			"instructions": "In the model catalog, search for **Phi-4** and open its model card. Which company publishes the Phi family of small language models?",
-			"isMultipleResponse": false,
-			"isRandomized": true,
-			"answers": [
-				{
-					"_id": "a1f4c2d0-91b3-4e07-8c52-0d61a7e93b11",
-					"correct": true,
-					"answer": "Microsoft"
-				},
-				{
-					"_id": "a1f4c2d0-91b3-4e07-8c52-0d61a7e93b12",
-					"correct": false,
-					"answer": "OpenAI"
-				},
-				{
-					"_id": "a1f4c2d0-91b3-4e07-8c52-0d61a7e93b13",
-					"correct": false,
-					"answer": "Meta"
-				},
-				{
-					"_id": "a1f4c2d0-91b3-4e07-8c52-0d61a7e93b14",
-					"correct": false,
-					"answer": "Mistral AI"
-				}
-			],
-			"guidance": "Every model card lists its publisher near the model name. Phi is Microsoft's family of small language models (SLMs) — small enough to run cheaply, still strong at reasoning tasks.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"showExpectedAnswer": true,
-			"points": 1,
-			"incorrectPoints": 0,
-			"arePartialPointsAllowed": false,
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Multiple Choice"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "multiple-choice",
-		"taskId": "multiple-choice-7852031964",
-		"source": {
-			"name": "Who publishes Llama?",
-			"showName": true,
-			"instructions": "Now search the catalog for **Llama** models. Which company publishes the Llama family?",
-			"isMultipleResponse": false,
-			"isRandomized": true,
-			"answers": [
-				{
-					"_id": "b2e5d3c1-72a4-4f18-9d63-1e72b8fa4c21",
-					"correct": true,
-					"answer": "Meta"
-				},
-				{
-					"_id": "b2e5d3c1-72a4-4f18-9d63-1e72b8fa4c22",
-					"correct": false,
-					"answer": "Google"
-				},
-				{
-					"_id": "b2e5d3c1-72a4-4f18-9d63-1e72b8fa4c23",
-					"correct": false,
-					"answer": "Microsoft"
-				},
-				{
-					"_id": "b2e5d3c1-72a4-4f18-9d63-1e72b8fa4c24",
-					"correct": false,
-					"answer": "Cohere"
-				}
-			],
-			"guidance": "The Llama collection in the catalog is published by Meta. Notice that the catalog brings together models from many companies, not just Microsoft and OpenAI.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"showExpectedAnswer": true,
-			"points": 1,
-			"incorrectPoints": 0,
-			"arePartialPointsAllowed": false,
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Multiple Choice"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "multiple-choice",
-		"taskId": "multiple-choice-1265498730",
-		"source": {
-			"name": "What does an embeddings model do?",
-			"showName": true,
-			"instructions": "Search the catalog for **text-embedding-3-small** and open its model card. Based on the card, what does this model do?",
-			"isMultipleResponse": false,
-			"isRandomized": true,
-			"answers": [
-				{
-					"_id": "c3f6e4d2-83b5-4a29-8e74-2f83c9ab5d31",
-					"correct": true,
-					"answer": "Converts text into numeric vectors that can be used for search and similarity comparisons"
-				},
-				{
-					"_id": "c3f6e4d2-83b5-4a29-8e74-2f83c9ab5d32",
-					"correct": false,
-					"answer": "Generates images from text descriptions"
-				},
-				{
-					"_id": "c3f6e4d2-83b5-4a29-8e74-2f83c9ab5d33",
-					"correct": false,
-					"answer": "Holds conversations and answers questions in natural language"
-				},
-				{
-					"_id": "c3f6e4d2-83b5-4a29-8e74-2f83c9ab5d34",
-					"correct": false,
-					"answer": "Transcribes spoken audio into written text"
-				}
-			],
-			"guidance": "The card lists its inference task as *embeddings*: turning text into vectors (long lists of numbers) so that similar meanings end up numerically close together — the foundation of semantic search and RAG. Notice you can also filter the whole catalog by inference task.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"showExpectedAnswer": true,
-			"points": 1,
-			"incorrectPoints": 0,
-			"arePartialPointsAllowed": false,
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Multiple Choice"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "multiple-choice",
-		"taskId": "multiple-choice-9037246158",
-		"source": {
-			"name": "Pick a model: speech to text",
-			"showName": true,
-			"instructions": "Your team needs to **transcribe recorded customer phone calls into text**. Use the catalog's search or task filters to find the model designed for this. Which one is it?",
-			"isMultipleResponse": false,
-			"isRandomized": true,
-			"answers": [
-				{
-					"_id": "d4a7f5e3-94c6-4b3a-9f85-3a94dabc6e41",
-					"correct": true,
-					"answer": "Whisper"
-				},
-				{
-					"_id": "d4a7f5e3-94c6-4b3a-9f85-3a94dabc6e42",
-					"correct": false,
-					"answer": "GPT-4o mini"
-				},
-				{
-					"_id": "d4a7f5e3-94c6-4b3a-9f85-3a94dabc6e43",
-					"correct": false,
-					"answer": "DALL·E 3"
-				},
-				{
-					"_id": "d4a7f5e3-94c6-4b3a-9f85-3a94dabc6e44",
-					"correct": false,
-					"answer": "text-embedding-3-large"
-				}
-			],
-			"guidance": "Whisper's model card lists speech recognition / audio transcription as its task. Filtering the catalog by task (e.g. *speech*) is the fastest way to answer \"which model should I use for X?\" questions.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"showExpectedAnswer": true,
-			"points": 1,
-			"incorrectPoints": 0,
-			"arePartialPointsAllowed": false,
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Multiple Choice"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "multiple-choice",
-		"taskId": "multiple-choice-5670981243",
-		"source": {
-			"name": "Pick a model: image generation",
-			"showName": true,
-			"instructions": "A marketing team wants to **generate product images from text descriptions**. Which model from the catalog fits that job?",
-			"isMultipleResponse": false,
-			"isRandomized": true,
-			"answers": [
-				{
-					"_id": "e5b8a6f4-a5d7-4c4b-8a96-4ba5ebcd7f51",
-					"correct": true,
-					"answer": "DALL·E 3"
-				},
-				{
-					"_id": "e5b8a6f4-a5d7-4c4b-8a96-4ba5ebcd7f52",
-					"correct": false,
-					"answer": "Phi-4"
-				},
-				{
-					"_id": "e5b8a6f4-a5d7-4c4b-8a96-4ba5ebcd7f53",
-					"correct": false,
-					"answer": "Mistral Large"
-				},
-				{
-					"_id": "e5b8a6f4-a5d7-4c4b-8a96-4ba5ebcd7f54",
-					"correct": false,
-					"answer": "Whisper"
-				}
-			],
-			"guidance": "DALL·E 3 is a text-to-image model. Phi-4 and Mistral Large are text (chat completion) models, and Whisper is speech-to-text — the catalog's task labels tell you this at a glance.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"showExpectedAnswer": true,
-			"points": 1,
-			"incorrectPoints": 0,
-			"arePartialPointsAllowed": false,
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Multiple Choice"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "multiple-choice",
-		"taskId": "multiple-choice-2489135607",
-		"source": {
-			"name": "Who's in the catalog?",
-			"showName": true,
-			"instructions": "Browse the catalog's **collections / publisher filter**. Which of the following actually publish models in the Azure AI Foundry model catalog? *(Select all that apply.)*",
-			"isMultipleResponse": true,
-			"isRandomized": true,
-			"answers": [
-				{
-					"_id": "f6c9b7a5-b6e8-4d5c-9ba7-5cb6fcde8a61",
-					"correct": true,
-					"answer": "Microsoft"
-				},
-				{
-					"_id": "f6c9b7a5-b6e8-4d5c-9ba7-5cb6fcde8a62",
-					"correct": true,
-					"answer": "Meta"
-				},
-				{
-					"_id": "f6c9b7a5-b6e8-4d5c-9ba7-5cb6fcde8a63",
-					"correct": true,
-					"answer": "Mistral AI"
-				},
-				{
-					"_id": "f6c9b7a5-b6e8-4d5c-9ba7-5cb6fcde8a64",
-					"correct": false,
-					"answer": "Fabrikam AI"
-				}
-			],
-			"guidance": "Microsoft, Meta, and Mistral AI all have collections in the catalog (along with OpenAI, Cohere, and others). \"Fabrikam\" is a fictional company Microsoft uses in documentation examples — you won't find it publishing models!",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"showExpectedAnswer": true,
-			"points": 2,
-			"incorrectPoints": 0,
-			"arePartialPointsAllowed": true,
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Multiple Choice"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "multiple-choice",
-		"taskId": "multiple-choice-6154302897",
-		"source": {
-			"name": "Deployment options",
-			"showName": true,
-			"instructions": "Open any large chat model's card (for example **GPT-4o mini** or **Mistral Large**) and look at its **deployment options**. Which option means *Microsoft hosts the model for you and you pay per use, without managing any servers*?",
-			"isMultipleResponse": false,
-			"isRandomized": true,
-			"answers": [
-				{
-					"_id": "a7d1c8b6-c7f9-4e6d-8cb8-6dc7adbf9b71",
-					"correct": true,
-					"answer": "Serverless / standard pay-as-you-go deployment"
-				},
-				{
-					"_id": "a7d1c8b6-c7f9-4e6d-8cb8-6dc7adbf9b72",
-					"correct": false,
-					"answer": "Managed compute — you reserve and pay for dedicated virtual machines"
-				},
-				{
-					"_id": "a7d1c8b6-c7f9-4e6d-8cb8-6dc7adbf9b73",
-					"correct": false,
-					"answer": "Downloading the model weights and running them on your laptop"
-				},
-				{
-					"_id": "a7d1c8b6-c7f9-4e6d-8cb8-6dc7adbf9b74",
-					"correct": false,
-					"answer": "Printing the model card and mailing it to Microsoft"
-				}
-			],
-			"guidance": "With serverless (standard / pay-as-you-go) deployments you just call an API and pay per token — Microsoft runs the infrastructure. Managed compute gives you dedicated VMs for models that need them (more control, more cost). Model cards list which options each model supports.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"showExpectedAnswer": true,
-			"points": 1,
-			"incorrectPoints": 0,
-			"arePartialPointsAllowed": false,
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Multiple Choice"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "test",
-		"taskId": "test-8823941675",
-		"source": {
-			"name": "Challenge 1 — Coach the assistant",
-			"showName": true,
-			"instructions": "Write and grade your **system prompt** for Bluff City Bikes in the Prompt Lab until it scores **70 or higher**, then click **CHECK IT** to record your grade.",
-			"command": "python3 .guides/secure/check_challenge.py 1",
-			"timeoutSeconds": 60,
-			"points": 10,
-			"arePartialPointsAllowed": false,
-			"oneTimeTest": false,
-			"showExpectedAnswer": false,
-			"guidance": "Your grade comes from the Prompt Lab's rubric: role & persona, scope & guardrails, tone, and output rules. If you haven't passed yet, the check prints the grader's suggestions — refine your prompt and try again. There is no attempt limit.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Advanced Code Test"
-					},
-					{
-						"name": "Programming Language",
-						"value": "Python"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "test",
-		"taskId": "test-4417820593",
-		"source": {
-			"name": "Challenge 2 — Sharpen the ask",
-			"showName": true,
-			"instructions": "Rewrite the vague recycling request as a strong **user prompt** in the Prompt Lab until it scores **70 or higher**, then click **CHECK IT** to record your grade.",
-			"command": "python3 .guides/secure/check_challenge.py 2",
-			"timeoutSeconds": 60,
-			"points": 10,
-			"arePartialPointsAllowed": false,
-			"oneTimeTest": false,
-			"showExpectedAnswer": false,
-			"guidance": "The rubric rewards context & purpose, one clear task, format & length constraints, and quality cues. If you haven't passed yet, the check prints the grader's suggestions — refine and re-run. There is no attempt limit.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Advanced Code Test"
-					},
-					{
-						"name": "Programming Language",
-						"value": "Python"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	},
-	{
-		"type": "test",
-		"taskId": "test-1098273465",
-		"source": {
-			"name": "Challenge 3 — Structured output",
-			"showName": true,
-			"instructions": "Write the **system + user prompts** that make the model return clean JSON in the Prompt Lab until they score **70 or higher**, then click **CHECK IT** to record your grade.",
-			"command": "python3 .guides/secure/check_challenge.py 3",
-			"timeoutSeconds": 60,
-			"points": 10,
-			"arePartialPointsAllowed": false,
-			"oneTimeTest": false,
-			"showExpectedAnswer": false,
-			"guidance": "Watch the automatic format check under your results: the reply must be valid JSON with exactly the five required keys and nothing else around it. If a markdown fence (```) keeps appearing, forbid it explicitly in your system prompt. There is no attempt limit.",
-			"showGuidanceAfterResponseOption": {
-				"type": "Always"
-			},
-			"metadata": {
-				"tags": [
-					{
-						"name": "Assessment Type",
-						"value": "Advanced Code Test"
-					},
-					{
-						"name": "Programming Language",
-						"value": "Python"
-					}
-				],
-				"files": [],
-				"opened": []
-			},
-			"bloomsObjectiveLevel": "",
-			"learningObjectives": ""
-		}
-	}
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-3418509276",
+  "source": {
+   "showName": true,
+   "answers": [
+    {
+     "answer": "Microsoft",
+     "correct": true,
+     "_id": "66a1f4c2d091b34e078c5211"
+    },
+    {
+     "answer": "OpenAI",
+     "correct": false,
+     "_id": "66a1f4c2d091b34e078c5212"
+    },
+    {
+     "answer": "Meta",
+     "correct": false,
+     "_id": "66a1f4c2d091b34e078c5213"
+    },
+    {
+     "answer": "Mistral AI",
+     "correct": false,
+     "_id": "66a1f4c2d091b34e078c5214"
+    }
+   ],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Who publishes Phi?",
+   "instructions": "In the model catalog, search for **Phi-4** and open its model card. Which company publishes the Phi family of small language models?",
+   "points": 1,
+   "incorrectPoints": 0,
+   "multipleResponse": false,
+   "guidance": "Every model card lists its publisher near the model name. Phi is Microsoft's family of small language models (SLMs) — small enough to run cheaply, still strong at reasoning tasks."
+  }
+ },
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-7852031964",
+  "source": {
+   "showName": true,
+   "answers": [
+    {
+     "answer": "Meta",
+     "correct": true,
+     "_id": "66b2e5d3c172a44f189d6321"
+    },
+    {
+     "answer": "Google",
+     "correct": false,
+     "_id": "66b2e5d3c172a44f189d6322"
+    },
+    {
+     "answer": "Microsoft",
+     "correct": false,
+     "_id": "66b2e5d3c172a44f189d6323"
+    },
+    {
+     "answer": "Cohere",
+     "correct": false,
+     "_id": "66b2e5d3c172a44f189d6324"
+    }
+   ],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Who publishes Llama?",
+   "instructions": "Now search the catalog for **Llama** models. Which company publishes the Llama family?",
+   "points": 1,
+   "incorrectPoints": 0,
+   "multipleResponse": false,
+   "guidance": "The Llama collection in the catalog is published by Meta. Notice that the catalog brings together models from many companies, not just Microsoft and OpenAI."
+  }
+ },
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-1265498730",
+  "source": {
+   "showName": true,
+   "answers": [
+    {
+     "answer": "Converts text into numeric vectors that can be used for search and similarity comparisons",
+     "correct": true,
+     "_id": "66c3f6e4d283b54a298e7431"
+    },
+    {
+     "answer": "Generates images from text descriptions",
+     "correct": false,
+     "_id": "66c3f6e4d283b54a298e7432"
+    },
+    {
+     "answer": "Holds conversations and answers questions in natural language",
+     "correct": false,
+     "_id": "66c3f6e4d283b54a298e7433"
+    },
+    {
+     "answer": "Transcribes spoken audio into written text",
+     "correct": false,
+     "_id": "66c3f6e4d283b54a298e7434"
+    }
+   ],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "What does an embeddings model do?",
+   "instructions": "Search the catalog for **text-embedding-3-small** and open its model card. Based on the card, what does this model do?",
+   "points": 1,
+   "incorrectPoints": 0,
+   "multipleResponse": false,
+   "guidance": "The card lists its inference task as *embeddings*: turning text into vectors (long lists of numbers) so that similar meanings end up numerically close together — the foundation of semantic search and RAG. Notice you can also filter the whole catalog by inference task."
+  }
+ },
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-9037246158",
+  "source": {
+   "showName": true,
+   "answers": [
+    {
+     "answer": "Whisper",
+     "correct": true,
+     "_id": "66d4a7f5e394c64b3a9f8541"
+    },
+    {
+     "answer": "GPT-4o mini",
+     "correct": false,
+     "_id": "66d4a7f5e394c64b3a9f8542"
+    },
+    {
+     "answer": "DALL·E 3",
+     "correct": false,
+     "_id": "66d4a7f5e394c64b3a9f8543"
+    },
+    {
+     "answer": "text-embedding-3-large",
+     "correct": false,
+     "_id": "66d4a7f5e394c64b3a9f8544"
+    }
+   ],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Pick a model: speech to text",
+   "instructions": "Your team needs to **transcribe recorded customer phone calls into text**. Use the catalog's search or task filters to find the model designed for this. Which one is it?",
+   "points": 1,
+   "incorrectPoints": 0,
+   "multipleResponse": false,
+   "guidance": "Whisper's model card lists speech recognition / audio transcription as its task. Filtering the catalog by task (e.g. *speech*) is the fastest way to answer \"which model should I use for X?\" questions."
+  }
+ },
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-5670981243",
+  "source": {
+   "showName": true,
+   "answers": [
+    {
+     "answer": "DALL·E 3",
+     "correct": true,
+     "_id": "66e5b8a6f4a5d74c4b8a9651"
+    },
+    {
+     "answer": "Phi-4",
+     "correct": false,
+     "_id": "66e5b8a6f4a5d74c4b8a9652"
+    },
+    {
+     "answer": "Mistral Large",
+     "correct": false,
+     "_id": "66e5b8a6f4a5d74c4b8a9653"
+    },
+    {
+     "answer": "Whisper",
+     "correct": false,
+     "_id": "66e5b8a6f4a5d74c4b8a9654"
+    }
+   ],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Pick a model: image generation",
+   "instructions": "A marketing team wants to **generate product images from text descriptions**. Which model from the catalog fits that job?",
+   "points": 1,
+   "incorrectPoints": 0,
+   "multipleResponse": false,
+   "guidance": "DALL·E 3 is a text-to-image model. Phi-4 and Mistral Large are text (chat completion) models, and Whisper is speech-to-text — the catalog's task labels tell you this at a glance."
+  }
+ },
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-2489135607",
+  "source": {
+   "showName": true,
+   "answers": [
+    {
+     "answer": "Microsoft",
+     "correct": true,
+     "_id": "66f6c9b7a5b6e84d5c9ba761"
+    },
+    {
+     "answer": "Meta",
+     "correct": true,
+     "_id": "66f6c9b7a5b6e84d5c9ba762"
+    },
+    {
+     "answer": "Mistral AI",
+     "correct": true,
+     "_id": "66f6c9b7a5b6e84d5c9ba763"
+    },
+    {
+     "answer": "Fabrikam AI",
+     "correct": false,
+     "_id": "66f6c9b7a5b6e84d5c9ba764"
+    }
+   ],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Who's in the catalog?",
+   "instructions": "Browse the catalog's **collections / publisher filter**. Which of the following actually publish models in the Azure AI Foundry model catalog? *(Select all that apply.)*",
+   "points": 2,
+   "incorrectPoints": 0,
+   "multipleResponse": true,
+   "guidance": "Microsoft, Meta, and Mistral AI all have collections in the catalog (along with OpenAI, Cohere, and others). \"Fabrikam\" is a fictional company Microsoft uses in documentation examples — you won't find it publishing models!"
+  }
+ },
+ {
+  "type": "multiple-choice",
+  "taskId": "multiple-choice-6154302897",
+  "source": {
+   "showName": true,
+   "answers": [
+    {
+     "answer": "Serverless / standard pay-as-you-go deployment",
+     "correct": true,
+     "_id": "66a7d1c8b6c7f94e6d8cb871"
+    },
+    {
+     "answer": "Managed compute — you reserve and pay for dedicated virtual machines",
+     "correct": false,
+     "_id": "66a7d1c8b6c7f94e6d8cb872"
+    },
+    {
+     "answer": "Downloading the model weights and running them on your laptop",
+     "correct": false,
+     "_id": "66a7d1c8b6c7f94e6d8cb873"
+    },
+    {
+     "answer": "Printing the model card and mailing it to Microsoft",
+     "correct": false,
+     "_id": "66a7d1c8b6c7f94e6d8cb874"
+    }
+   ],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Deployment options",
+   "instructions": "Open any large chat model's card (for example **GPT-4o mini** or **Mistral Large**) and look at its **deployment options**. Which option means *Microsoft hosts the model for you and you pay per use, without managing any servers*?",
+   "points": 1,
+   "incorrectPoints": 0,
+   "multipleResponse": false,
+   "guidance": "With serverless (standard / pay-as-you-go) deployments you just call an API and pay per token — Microsoft runs the infrastructure. Managed compute gives you dedicated VMs for models that need them (more control, more cost). Model cards list which options each model supports."
+  }
+ },
+ {
+  "type": "test",
+  "taskId": "test-8823941675",
+  "source": {
+   "showName": true,
+   "answers": [],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Challenge 1 — Coach the assistant",
+   "instructions": "Write and grade your **system prompt** for Bluff City Bikes in the Prompt Lab until it scores **70 or higher**, then click **CHECK IT** to record your grade.\n\nIf you haven't passed yet, this check prints the grader's suggestions — refine your prompt in the Prompt Lab and try again. There is no attempt limit.",
+   "command": "python3 .guides/secure/check_challenge.py 1",
+   "points": 10,
+   "guidance": "Your grade comes from the Prompt Lab's rubric: role & persona, scope & guardrails, tone, and output rules."
+  }
+ },
+ {
+  "type": "test",
+  "taskId": "test-4417820593",
+  "source": {
+   "showName": true,
+   "answers": [],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Challenge 2 — Sharpen the ask",
+   "instructions": "Rewrite the vague recycling request as a strong **user prompt** in the Prompt Lab until it scores **70 or higher**, then click **CHECK IT** to record your grade.\n\nIf you haven't passed yet, this check prints the grader's suggestions — refine and re-run. There is no attempt limit.",
+   "command": "python3 .guides/secure/check_challenge.py 2",
+   "points": 10,
+   "guidance": "The rubric rewards context & purpose, one clear task, format & length constraints, and quality cues."
+  }
+ },
+ {
+  "type": "test",
+  "taskId": "test-1098273465",
+  "source": {
+   "showName": true,
+   "answers": [],
+   "tokens": {
+    "blank": [],
+    "text": []
+   },
+   "name": "Challenge 3 — Structured output",
+   "instructions": "Write the **system + user prompts** that make the model return clean JSON in the Prompt Lab until they score **70 or higher**, then click **CHECK IT** to record your grade.\n\nThere is no attempt limit.",
+   "command": "python3 .guides/secure/check_challenge.py 3",
+   "points": 10,
+   "guidance": "Watch the automatic format check under your results: the reply must be valid JSON with exactly the five required keys and nothing else around it. If a markdown fence (```) keeps appearing, forbid it explicitly in your system prompt."
+  }
+ }
 ]
