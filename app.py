@@ -27,7 +27,7 @@ from pathlib import Path
 
 import flask.cli
 from dotenv import load_dotenv
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, redirect, render_template, request
 from openai import AzureOpenAI, OpenAIError
 
 # Load variables from the student's .env file into the environment.
@@ -367,8 +367,21 @@ def save_result(challenge, system_prompt, user_prompt, transcripts, grade):
 # ---------------------------------------------------------------------------
 @app.route("/")
 def index():
-    """Serve the Prompt Lab page."""
-    return render_template("index.html")
+    """The lab has one page per challenge; the root goes to the first one."""
+    return redirect("/challenge/1")
+
+
+@app.route("/challenge/<int:challenge_id>")
+def challenge_page(challenge_id):
+    """Serve the Prompt Lab page for one challenge.
+
+    Each Codio guide page opens its own challenge URL in the preview panel
+    (see the #preview actions in .guides/content), so students navigate the
+    guide only — the right challenge is already on screen.
+    """
+    if challenge_id not in CHALLENGES:
+        return redirect("/challenge/1")
+    return render_template("index.html", challenge_id=challenge_id)
 
 
 @app.route("/api/health")

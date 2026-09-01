@@ -17,7 +17,7 @@ prompt closes those gaps. A reliable recipe:
 
 ### Your job
 
-Open the **Challenge 2** tab in the Prompt Lab. The system prompt is fixed (a
+The panel beside this page shows **Challenge 2**. The system prompt is fixed (a
 plain "helpful writing assistant") — everything must come from **your user
 prompt**. Rewrite the vague request into one that would get a usable result on
 the first try.

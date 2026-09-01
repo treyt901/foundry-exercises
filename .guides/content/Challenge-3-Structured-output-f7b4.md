@@ -11,7 +11,7 @@ direction:
 
 ### Your job
 
-Open the **Challenge 3** tab. Bluff City Bikes wants incoming customer emails
+The panel beside this page shows **Challenge 3**. Bluff City Bikes wants incoming customer emails
 turned into records with exactly these keys:
 
 ```json

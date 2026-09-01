@@ -18,9 +18,7 @@ const resultsEl = document.getElementById("results");
 let passScore = 70;
 let challenges = [];
 let current = null;
-// Keep each challenge's drafts while switching tabs.
-const drafts = {};
-// Latest known grade per challenge id (for the tab badges).
+// Latest known grade per challenge id (for the nav badges).
 const bests = {};
 
 // --- Small helpers -----------------------------------------------------------
@@ -45,13 +43,16 @@ function setBusy(busy) {
     : "";
 }
 
-// --- Tabs -------------------------------------------------------------------
+// --- Challenge nav ------------------------------------------------------------
+// Each challenge lives at its own URL (/challenge/1, /2, /3). In Codio the
+// guide opens the right page for you; this nav is a courtesy for anyone
+// moving around by hand, and it carries the best-score badges.
 
 function renderTabs() {
   tabsEl.innerHTML = "";
   for (const challenge of challenges) {
-    const tab = el("button", "tab", `Challenge ${challenge.id}`);
-    tab.type = "button";
+    const tab = el("a", "tab", `Challenge ${challenge.id}`);
+    tab.href = `/challenge/${challenge.id}`;
     const best = bests[challenge.id];
     if (best) {
       const badge = el(
@@ -62,22 +63,12 @@ function renderTabs() {
       tab.appendChild(badge);
     }
     if (current && current.id === challenge.id) tab.classList.add("active");
-    tab.addEventListener("click", () => selectChallenge(challenge.id));
     tabsEl.appendChild(tab);
   }
 }
 
-function saveDraft() {
-  if (!current) return;
-  drafts[current.id] = {
-    system: systemInput.value,
-    user: userInput.value,
-  };
-}
-
 function selectChallenge(id) {
-  saveDraft();
-  current = challenges.find((c) => c.id === id);
+  current = challenges.find((c) => c.id === id) || challenges[0];
   renderTabs();
 
   document.getElementById("challenge-title").textContent =
@@ -136,13 +127,45 @@ function selectChallenge(id) {
     ? `Improve on: "${current.weak_prompt}"`
     : "Type the message you want to send to the model…";
 
-  const draft = drafts[current.id] || { system: "", user: "" };
+  // Restore the draft for this challenge. Each challenge is its own page and
+  // Codio reloads the preview when students move through the guide, so drafts
+  // are kept in localStorage to survive the navigation.
+  const draft = loadDraft(current.id);
   systemInput.value = draft.system;
   userInput.value = draft.user;
 
   resultsEl.classList.add("hidden");
   statusEl.textContent = "";
 }
+
+function draftKey(id) {
+  return `prompt-lab-draft-${id}`;
+}
+
+function loadDraft(id) {
+  try {
+    const raw = localStorage.getItem(draftKey(id));
+    if (raw) return { system: "", user: "", ...JSON.parse(raw) };
+  } catch (err) {
+    /* private windows etc. — start blank */
+  }
+  return { system: "", user: "" };
+}
+
+function saveDraft() {
+  if (!current) return;
+  try {
+    localStorage.setItem(
+      draftKey(current.id),
+      JSON.stringify({ system: systemInput.value, user: userInput.value })
+    );
+  } catch (err) {
+    /* storage unavailable — drafts just won't persist */
+  }
+}
+
+systemInput.addEventListener("input", saveDraft);
+userInput.addEventListener("input", saveDraft);
 
 // --- Rendering a grade -------------------------------------------------------
 
@@ -287,7 +310,8 @@ async function boot() {
     for (const [id, record] of Object.entries(resultData)) {
       bests[Number(id)] = record;
     }
-    selectChallenge(challenges[0].id);
+    // The Flask route tells the page which challenge it serves.
+    selectChallenge(Number(window.CHALLENGE_ID) || challenges[0].id);
   } catch (err) {
     bannerEl.textContent = "Could not load the challenges: " + err.message;
     bannerEl.classList.remove("hidden");

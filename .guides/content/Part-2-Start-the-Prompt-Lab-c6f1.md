@@ -9,7 +9,10 @@ If the preview panel looks blank at first, wait a moment and click its
 
 ### A quick tour
 
-The Prompt Lab has **three challenge tabs**. For each challenge you'll see:
+Each challenge has **its own page in the Prompt Lab, and the guide opens the
+right one for you** — as you move to a challenge page in this guide, the
+preview panel automatically shows that challenge. No navigating inside the
+app needed. On every challenge page you'll see:
 
 - **The brief** (left): the scenario, what your prompt must do, and the
   **rubric** it will be graded on.

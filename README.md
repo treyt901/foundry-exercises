@@ -55,7 +55,7 @@ the grader's feedback.
   assessments.json         7 multiple-choice Qs (Part 1) + 3 graded checks (Part 2)
   content/                 Guide pages (Codio book format)
   secure/check_challenge.py  Assessment checker for the challenges
-app.py                     Flask app: challenges, run + grade + save endpoints
+app.py                     Flask app: one page per challenge (/challenge/<id>), run + grade + save endpoints
 challenges.json            Challenge briefs, fixed prompts/messages, rubrics, pass score
 lab.sh / run.sh            Start/restart/stop the app (background, logs to .flask.log)
 templates/, static/        The Prompt Lab UI

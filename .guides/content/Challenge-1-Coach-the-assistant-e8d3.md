@@ -7,7 +7,7 @@ rules, and the personality.
 
 ### Your job
 
-In the Prompt Lab panel, open the **Challenge 1** tab. Write a system prompt
+The panel beside this page already shows **Challenge 1**. Write a system prompt
 that turns the model into a support assistant for **Bluff City Bikes**. A good
 system prompt usually covers:
 

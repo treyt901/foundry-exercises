@@ -21,7 +21,9 @@
       <!-- Shown when the .env file is not configured yet. -->
       <div id="config-banner" class="banner hidden"></div>
 
-      <!-- Challenge tabs (filled in by app.js). -->
+      <!-- Links to the other challenge pages, with best-score badges
+           (filled in by app.js). In Codio, each guide page opens its own
+           challenge URL, so these are just a courtesy. -->
       <nav id="tabs" class="tabs"></nav>
 
       <main class="lab">
@@ -110,6 +112,10 @@
       </main>
     </div>
 
+    <script>
+      // Which challenge this page shows — set by the Flask route.
+      window.CHALLENGE_ID = {{ challenge_id | tojson }};
+    </script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>
