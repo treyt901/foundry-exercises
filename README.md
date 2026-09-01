@@ -66,7 +66,8 @@ app.py                     Flask app: one page per challenge (/challenge/<id>), 
 challenges.json            Challenge briefs, fixed prompts/messages, rubrics, pass score
 lab.sh / run.sh            Start/restart/stop the app (background, logs to .flask.log)
 templates/, static/        The Prompt Lab UI
-.env.example               Template for per-student Azure OpenAI credentials
+.env                       Per-student Azure OpenAI credentials (ships blank; students fill it in)
+test_connection.py         Endpoint check run by the setup page's "Test my connection" button
 ```
 
 ## For instructors
@@ -87,6 +88,7 @@ templates/, static/        The Prompt Lab UI
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env      # then edit .env
+# edit .env with your Azure OpenAI details, then optionally:
+python3 test_connection.py
 python3 app.py            # http://localhost:5000
 ```

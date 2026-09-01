@@ -69,24 +69,15 @@ stop_app() {
 }
 
 # --- Main actions ----------------------------------------------------------
-start_app() {
-  if is_running; then
-    echo "ℹ️  The Prompt Lab is already running. Use Restart to apply changes."
-    return 0
-  fi
-
+require_python() {
   if [ -z "$PY" ]; then
     echo "❌ Python 3.8+ was not found on this box. This is an instructor setup"
     echo "   issue — see INSTRUCTOR_SETUP.md."
     return 1
   fi
+}
 
-  if [ ! -f .env ]; then
-    echo "⚠️  No .env file yet. Copy .env.example to .env and add your Azure"
-    echo "   OpenAI details (Part 2, setup page). The app will start, but"
-    echo "   grading won't work until it's configured."
-  fi
-
+ensure_deps() {
   # Install dependencies quietly, and only if they aren't already present.
   if ! "$PY" -c "import flask, openai, dotenv" >/dev/null 2>&1; then
     echo "⏳ Preparing the app (first run only)…"
@@ -95,6 +86,22 @@ start_app() {
       return 1
     fi
   fi
+}
+
+start_app() {
+  if is_running; then
+    echo "ℹ️  The Prompt Lab is already running. Use Restart to apply changes."
+    return 0
+  fi
+
+  require_python || return 1
+
+  if [ ! -f .env ]; then
+    echo "⚠️  The .env file is missing — it ships with the assignment. Ask your"
+    echo "   instructor for help (or restore it from the original project)."
+  fi
+
+  ensure_deps || return 1
 
   echo "⏳ Starting the Prompt Lab…"
   # Run in the background; hide all of Flask's output in the log file.
@@ -130,8 +137,12 @@ case "${1:-start}" in
       echo "⚪ The Prompt Lab is not running."
     fi
     ;;
+  test)
+    # One-shot check that the student's .env actually reaches their deployment.
+    require_python && ensure_deps && "$PY" test_connection.py
+    ;;
   *)
-    echo "Usage: bash lab.sh [start|restart|stop|status]"
+    echo "Usage: bash lab.sh [start|restart|stop|status|test]"
     exit 1
     ;;
 esac

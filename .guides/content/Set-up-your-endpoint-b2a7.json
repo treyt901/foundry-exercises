@@ -7,7 +7,7 @@
 			"action": "close"
 		},
 		{
-			"path": ".env.example",
+			"path": ".env",
 			"panel": 0,
 			"action": "open"
 		}

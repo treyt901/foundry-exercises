@@ -30,7 +30,7 @@ mark it complete again to update your grade.)
 
 | Problem | Fix |
 | --- | --- |
-| Banner says values are missing | Open `.env` (Part 2 setup page), fill in every value, then **Restart**: {🔄 Restart}(bash lab.sh restart) |
+| Banner says values are missing | Open `.env` (see the setup page near the start), fill in every value, then **Restart**: {🔄 Restart}(bash lab.sh restart) |
 | "Azure OpenAI request failed" | Check your endpoint URL and key, and that `AZURE_OPENAI_DEPLOYMENT` matches your deployment name exactly. |
 | Preview panel is blank | Wait for **✅ Prompt Lab is running** in the terminal, then click **refresh** in the preview panel. |
 | "The grader reply could not be parsed" | Occasional model hiccup — press **Run & grade** again. |

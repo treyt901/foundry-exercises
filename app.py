@@ -12,11 +12,13 @@ How a grading run works (see /api/grade):
   2. A second "grader" call sends the student's prompts and the resulting
      transcript(s) to the same deployment with a rubric, and asks for
      per-criterion scores, strengths, and concrete refinement suggestions.
-  3. The result is saved to results/challenge_<id>.json so the Codio
-     assessments (.guides/secure/check_challenge.py) can award points.
+  3. The result is saved to results/challenge_<id>.json, where the
+     auto-grade script (.guides/secure/autograde.py) reads it when the
+     student marks the assignment complete.
 
-Configuration lives in a `.env` file (see `.env.example`), exactly like the
-AI-901 chat lab this project builds on.
+Configuration lives in the `.env` file at the project root (it ships blank;
+students fill it in on the guide's setup page), like the AI-901 chat lab
+this project builds on.
 """
 
 import json

@@ -1,21 +1,13 @@
 # Set up your endpoint
 
 First things first: the Prompt Lab you'll use in Part 2 talks to **your**
-Azure OpenAI deployment, so it needs your endpoint details in a file called
-**`.env`** — exactly like the chat lab. We'll do this together now so that
-everything just works later.
+Azure OpenAI deployment, so it needs your endpoint details in the **`.env`**
+file — it's already open in the panel beside this guide. We'll fill it in and
+prove it works before anything else.
 
-### 1. Create your `.env` file
+### 1. Fill in your `.env`
 
-{Create my .env file}(cp -n .env.example .env && echo "Created .env — now open it from the file tree and add your values.")
-
-### 2. Open `.env` and fill it in
-
-In the **file tree** on the left, open the new **`.env`** file. The panel
-beside this guide shows `.env.example` so you can see what each value looks
-like.
-
-Fill in these values from your Azure OpenAI resource (in the Azure AI Foundry /
+Add these values from your Azure OpenAI resource (in the Azure AI Foundry /
 Azure portal, under **Keys and Endpoint** and **Deployments**):
 
 | Setting | What it is | Example |
@@ -29,4 +21,19 @@ Azure portal, under **Keys and Endpoint** and **Deployments**):
 > the Deployments page. Remember it — in Part 1 you'll explore the catalog
 > where the model behind your deployment lives.
 
-**Save the file** (`Ctrl/Cmd + S`) when you're done, then continue to Part 1.
+**Save the file** (`Ctrl/Cmd + S`).
+
+### 2. Test your connection
+
+Click the button below. It sends one tiny message to your deployment and tells
+you exactly what to fix if anything is wrong:
+
+{✅ Test my connection}(bash lab.sh test)
+
+- **🎉 Everything works** → you're set. Continue to Part 1.
+- **❌ Something failed** → the message names the exact `.env` value to fix.
+  Edit, save, and test again. Don't move on until the test passes — everything
+  in Part 2 depends on this connection.
+
+> The very first test may take a minute — it also installs the app's
+> dependencies.

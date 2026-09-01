@@ -1,5 +1,5 @@
-# Per-student secrets — never commit these.
-.env
+# .env ships with the assignment (students fill it in on their own box).
+# Instructors: never commit it with real values.
 
 # Runtime files created by lab.sh / the Flask app.
 .flask.pid

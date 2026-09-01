@@ -15,7 +15,7 @@
         "cmd": "bash lab.sh stop"
       }
     },
-    "Set up .env (first time)": "cp -n .env.example .env && echo '.env created - open it and add your Azure OpenAI details.'"
+    "Test my endpoint connection": "bash lab.sh test"
   },
   "preview": {
     "Prompt Lab": "https://{{domain5000}}/"
