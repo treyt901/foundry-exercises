@@ -101,13 +101,17 @@ function selectChallenge(id) {
   userInput.placeholder = current.weak_prompt
     ? `Improve on: "${current.weak_prompt}"`
     : "Type the message you want to send to the model…";
+  document.getElementById("user-hint").textContent = current.starter_user_prompt
+    ? "a starter is provided — the system prompt should do the real work"
+    : "the message you send to the model";
 
   // Restore the draft for this challenge. Each challenge is its own page and
   // Codio reloads the preview when students move through the guide, so drafts
-  // are kept in localStorage to survive the navigation.
+  // are kept in localStorage to survive the navigation. Where the challenge
+  // ships a starter user prompt, it pre-fills the empty editor.
   const draft = loadDraft(current.id);
   systemInput.value = draft.system;
-  userInput.value = draft.user;
+  userInput.value = draft.user || current.starter_user_prompt || "";
 
   resultsEl.classList.add("hidden");
   statusEl.textContent = "";

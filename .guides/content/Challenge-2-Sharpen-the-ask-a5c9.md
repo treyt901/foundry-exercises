@@ -26,6 +26,12 @@ the first try.
 > get you — a specific prompt should produce something the association could
 > actually print.
 
+> ⚠️ **Don't paste the checklist.** The requirements in the brief describe
+> what a good prompt *contains* — they aren't the prompt. Copying them (or
+> writing meta-instructions like "provide context and specify a format")
+> scores zero. Invent the actual specifics yourself: who the flyer is for,
+> what it must say, how long it can be.
+
 ### Pass it
 
 Press **▶ Run & grade my prompts** and refine with the feedback. When the

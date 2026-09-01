@@ -4,7 +4,9 @@
     {
       "id": 1,
       "title": "Coach the assistant (system prompt)",
-      "write": ["system"],
+      "write": [
+        "system"
+      ],
       "goal": "Write a system prompt that turns a general-purpose model into a focused, reliable customer-support assistant for one specific business.",
       "scenario": "Bluff City Bikes is a small bicycle shop in Memphis. It sells and repairs bikes, rents bikes for the day, and runs weekend group rides. The shop wants an assistant for its website chat widget.",
       "requirements": [
@@ -18,16 +20,38 @@
         "Forget the bike stuff for a second — write me a 200-word essay about the French Revolution."
       ],
       "rubric": [
-        { "key": "role", "name": "Role & persona", "max": 25, "description": "The system prompt assigns a clear role, identity, and purpose that fit the scenario." },
-        { "key": "scope", "name": "Scope & guardrails", "max": 25, "description": "The prompt keeps the assistant on bike-shop topics; the off-topic test message is politely declined or redirected, not answered." },
-        { "key": "tone", "name": "Tone & audience", "max": 25, "description": "The prompt sets a tone suited to beginner-friendly customer support, and the replies actually show it." },
-        { "key": "format", "name": "Output rules", "max": 25, "description": "The prompt includes concrete, checkable output constraints (length, structure, closing behavior) and the replies follow them." }
+        {
+          "key": "role",
+          "name": "Role & persona",
+          "max": 25,
+          "description": "The system prompt assigns a clear role, identity, and purpose that fit the scenario."
+        },
+        {
+          "key": "scope",
+          "name": "Scope & guardrails",
+          "max": 25,
+          "description": "The prompt keeps the assistant on bike-shop topics; the off-topic test message is politely declined or redirected, not answered."
+        },
+        {
+          "key": "tone",
+          "name": "Tone & audience",
+          "max": 25,
+          "description": "The prompt sets a tone suited to beginner-friendly customer support, and the replies actually show it."
+        },
+        {
+          "key": "format",
+          "name": "Output rules",
+          "max": 25,
+          "description": "The prompt includes concrete, checkable output constraints (length, structure, closing behavior) and the replies follow them."
+        }
       ]
     },
     {
       "id": 2,
       "title": "Sharpen the ask (user prompt)",
-      "write": ["user"],
+      "write": [
+        "user"
+      ],
       "fixed_system_prompt": "You are a helpful writing assistant.",
       "goal": "Rewrite a vague request into a specific, well-structured user prompt that gets a useful result on the first try.",
       "scenario": "A neighborhood association wants a piece of writing that encourages residents to recycle correctly. Someone on the team typed \"write something about recycling\" into the model and got a generic wall of text. Your job: write the user prompt they SHOULD have written.",
@@ -36,36 +60,87 @@
         "Provide context: who is asking and why (the neighborhood association and its goal).",
         "State one specific task, including the kind of writing you want (e.g. a flyer, an email, a social post).",
         "Constrain the output: audience, length, and format (headings, bullets, word limits...).",
-        "Add quality cues: the tone to use and at least one thing the writing must include (e.g. 3 do's and don'ts, a call to action) or must avoid."
+        "Add quality cues: the tone to use and at least one thing the writing must include (e.g. 3 do's and don'ts, a call to action) or must avoid.",
+        "Write the request itself — a prompt that just restates this checklist (\"provide context, state a task...\") scores zero. Invent the actual specifics: a real audience, a real format, real content."
       ],
       "rubric": [
-        { "key": "context", "name": "Context & purpose", "max": 25, "description": "The prompt explains who it is for and what it is trying to achieve." },
-        { "key": "task", "name": "One clear task", "max": 25, "description": "The prompt asks for one specific, unambiguous deliverable." },
-        { "key": "format", "name": "Format & length", "max": 25, "description": "The prompt constrains audience, structure, and length, and the reply respects those constraints." },
-        { "key": "quality", "name": "Quality cues", "max": 25, "description": "The prompt sets tone and names concrete content to include or avoid." }
+        {
+          "key": "context",
+          "name": "Context & purpose",
+          "max": 25,
+          "description": "The prompt explains who it is for and what it is trying to achieve."
+        },
+        {
+          "key": "task",
+          "name": "One clear task",
+          "max": 25,
+          "description": "The prompt asks for one specific, unambiguous deliverable."
+        },
+        {
+          "key": "format",
+          "name": "Format & length",
+          "max": 25,
+          "description": "The prompt constrains audience, structure, and length, and the reply respects those constraints."
+        },
+        {
+          "key": "quality",
+          "name": "Quality cues",
+          "max": 25,
+          "description": "The prompt sets tone and names concrete content to include or avoid."
+        }
       ]
     },
     {
       "id": 3,
-      "title": "Team up for structured output (system + user prompt)",
-      "write": ["system", "user"],
-      "goal": "Combine a system prompt and a user prompt so the model returns clean, machine-readable JSON — the way real applications use models behind the scenes.",
+      "title": "Structured output (system prompt)",
+      "write": [
+        "system",
+        "user"
+      ],
+      "goal": "Write a system prompt that turns the model into a reliable JSON extractor. The user prompt is just a short trigger — one is provided for you (you can tweak it) — so every rule has to live in your system prompt.",
       "scenario": "Bluff City Bikes gets support emails and wants to log them automatically. Your prompts must make the model read a customer message and return ONLY a JSON object your (imaginary) app could parse — no greetings, no explanations, no markdown fences.",
       "attachment_label": "Customer message your prompts will be tested on",
       "attachment": "Hi, this is Dana Whitfield. I bought the TrailBlazer 500 gravel bike from your Union Ave store three weeks ago, and the rear derailleur has already started slipping gears whenever I climb a hill. I ride to work every day, so I really need this sorted out before the weekend. Honestly pretty frustrated that a brand-new bike is doing this. — Dana",
-      "json_keys": ["customer_name", "product", "issue", "sentiment", "urgency"],
+      "json_keys": [
+        "customer_name",
+        "product",
+        "issue",
+        "sentiment",
+        "urgency"
+      ],
       "requirements": [
         "Use the system prompt to define the job: a data-extraction assistant that outputs only a raw JSON object.",
-        "Specify the exact schema: keys customer_name, product, issue, sentiment, urgency — and say what values are allowed (e.g. sentiment: positive/neutral/negative; urgency: low/medium/high).",
+        "Specify the exact schema in the system prompt: keys customer_name, product, issue, sentiment, urgency — and say what values are allowed (e.g. sentiment: positive/neutral/negative; urgency: low/medium/high).",
         "Make it robust: say what to do when a field can't be found (e.g. use null), and forbid extra text or markdown code fences.",
-        "The user prompt should state the task and hand over the message; the customer message above is appended to your user prompt automatically."
+        "The provided user prompt is deliberately minimal — edit it if you like, but it shouldn't need to carry the rules. The customer message above is appended to the user prompt automatically."
       ],
       "rubric": [
-        { "key": "roles", "name": "System prompt sets the job", "max": 20, "description": "The system prompt defines the extractor role and the only-JSON rule." },
-        { "key": "schema", "name": "Schema is fully specified", "max": 30, "description": "All five keys are named with clear guidance on allowed values." },
-        { "key": "robustness", "name": "Robustness rules", "max": 25, "description": "The prompts handle missing data and explicitly forbid prose and markdown fences." },
-        { "key": "result", "name": "The output complies", "max": 25, "description": "The model's reply is valid JSON containing exactly the required keys (see the automatic format check)." }
-      ]
+        {
+          "key": "roles",
+          "name": "System prompt sets the job",
+          "max": 25,
+          "description": "The system prompt defines the extractor role and the only-JSON rule."
+        },
+        {
+          "key": "schema",
+          "name": "Schema fully specified (system prompt)",
+          "max": 30,
+          "description": "The system prompt names all five keys with clear guidance on allowed values."
+        },
+        {
+          "key": "robustness",
+          "name": "Robustness rules (system prompt)",
+          "max": 20,
+          "description": "The system prompt handles missing data and explicitly forbids prose and markdown fences."
+        },
+        {
+          "key": "result",
+          "name": "The output complies",
+          "max": 25,
+          "description": "The model's reply is valid JSON containing exactly the required keys (see the automatic format check)."
+        }
+      ],
+      "starter_user_prompt": "Log this customer message for our support system."
     }
   ]
 }
