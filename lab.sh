@@ -117,7 +117,12 @@ start_app() {
   fi
 }
 
-case "${1:-start}" in
+# Normalize the action: guide buttons and terminals can sneak in stray
+# whitespace or carriage returns around the argument.
+ACTION="$(printf '%s' "${1:-start}" | tr -d '[:space:]')"
+[ -n "$ACTION" ] || ACTION="start"
+
+case "$ACTION" in
   start)
     start_app
     ;;
@@ -142,7 +147,7 @@ case "${1:-start}" in
     require_python && ensure_deps && "$PY" test_connection.py
     ;;
   *)
-    echo "Usage: bash lab.sh [start|restart|stop|status|test]"
+    echo "Usage: bash lab.sh [start|restart|stop|status|test]  (got: '$ACTION')"
     exit 1
     ;;
 esac
