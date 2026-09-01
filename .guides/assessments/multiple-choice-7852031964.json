@@ -47,7 +47,7 @@
 		},
 		"maxAttemptsCount": 1,
 		"showExpectedAnswerOption": {
-			"type": "Never"
+			"type": "Always"
 		},
 		"points": 1,
 		"incorrectPoints": 0,

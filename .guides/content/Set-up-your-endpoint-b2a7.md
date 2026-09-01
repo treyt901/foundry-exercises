@@ -1,14 +1,10 @@
 # Set up your endpoint
 
-First things first: the Prompt Lab you'll use in Part 2 talks to **your**
-Azure OpenAI deployment, so it needs your endpoint details in the **`.env`**
-file — it's already open in the panel beside this guide. We'll fill it in and
-prove it works before anything else.
+First things first: the Prompt Lab you'll use in Part 2 talks to **your** Azure OpenAI deployment, so it needs your endpoint details in the **`.env`** file — it's already open in the panel beside this guide. We'll fill it in and prove it works before anything else.
 
 ### 1. Fill in your `.env`
 
-Add these values from your Azure OpenAI resource (in the Azure AI Foundry /
-Azure portal, under **Keys and Endpoint** and **Deployments**):
+Add these values from your Azure OpenAI resource (in the Azure AI Foundry / Azure portal, under **Keys and Endpoint** and **Deployments**):
 
 | Setting | What it is | Example |
 | --- | --- | --- |
@@ -17,11 +13,7 @@ Azure portal, under **Keys and Endpoint** and **Deployments**):
 | `AZURE_OPENAI_DEPLOYMENT` | The **deployment name** you created (not the model name) | `gpt-4o-mini` |
 | `AZURE_OPENAI_API_VERSION` | REST API version (already filled in) | `2024-10-21` |
 
-> **Tip:** `AZURE_OPENAI_DEPLOYMENT` is the name **you** gave your deployment on
-> the Deployments page. Remember it — in Part 1 you'll explore the catalog
-> where the model behind your deployment lives.
-
-**Save the file** (`Ctrl/Cmd + S`).
+> **Tip:** `AZURE_OPENAI_DEPLOYMENT` is the name **you** gave your deployment on the Deployments page. Remember it — in Part 1 you'll explore the catalog where the model behind your deployment lives.
 
 ### 2. Test your connection
 
@@ -35,6 +27,3 @@ you exactly what to fix if anything is wrong:
   Edit, save, and test again. Don't move on until the test passes — everything
   in Part 2 depends on this connection.
 
-> A small terminal opened with this page — it's installing the app's tools in
-> the background (first time only). If the test button says the tools are
-> still being installed, wait for that terminal to show a ✅ and try again.
