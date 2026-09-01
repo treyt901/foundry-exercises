@@ -8,11 +8,13 @@ The next three pages of this assignment will look like this:
 
 ![alt text](.guides/img/foundrypromptlab.png)
 
-On every challenge page you'll see:
+On every page you'll see:
 
-- **The brief**: the scenario, what your prompt must do, and the **rubric** it will be graded on.
-- **The editors**: depending on the challenge you'll write a **system prompt**, a **user prompt**, or both. Whatever you don't write is provided and shown read-only.
-- **▶ Run & grade my prompts**: runs your prompts against *your* deployment, then has the model grade them against the rubric.
+- **The guide**: this is the right-hand panel, read this **first** before looking at the challenge
+- **The challenge**: this is the left-hand panel, all your work will happen here. For each challenge, you'll have:
+  - **The brief**: the scenario, what your prompt must do, and the **rubric** it will be graded on.
+  - **The editors**: depending on the challenge you'll write a **system prompt**, a **user prompt**, or both. Whatever you don't write is provided and shown read-only.
+  - **▶ Run & grade my prompts**: runs your prompts against *your* deployment, then has the model grade them against the rubric.
 
 ### How the grading works
 
