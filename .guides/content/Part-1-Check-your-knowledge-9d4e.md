@@ -2,7 +2,8 @@
 
 Answer using the **model catalog tab** you opened on the previous page
 ([ai.azure.com/explore/models](https://ai.azure.com/explore/models)).
-Search and filter your way to each answer — don't guess!
+Search and filter your way to each answer — **you get only ONE attempt per
+question**, so make sure of your answer in the catalog before you Check It!
 
 ### Publishers
 

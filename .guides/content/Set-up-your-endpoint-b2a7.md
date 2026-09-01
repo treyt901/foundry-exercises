@@ -1,7 +1,9 @@
-# Part 2 — Set up your endpoint
+# Set up your endpoint
 
-The Prompt Lab talks to **your** Azure OpenAI deployment, so it needs your
-endpoint details in a file called **`.env`** — exactly like the chat lab.
+First things first: the Prompt Lab you'll use in Part 2 talks to **your**
+Azure OpenAI deployment, so it needs your endpoint details in a file called
+**`.env`** — exactly like the chat lab. We'll do this together now so that
+everything just works later.
 
 ### 1. Create your `.env` file
 
@@ -24,7 +26,7 @@ Azure portal, under **Keys and Endpoint** and **Deployments**):
 | `AZURE_OPENAI_API_VERSION` | REST API version (already filled in) | `2024-10-21` |
 
 > **Tip:** `AZURE_OPENAI_DEPLOYMENT` is the name **you** gave your deployment on
-> the Deployments page. And notice the connection to Part 1 — the model behind
-> your deployment is one you could find in the catalog.
+> the Deployments page. Remember it — in Part 1 you'll explore the catalog
+> where the model behind your deployment lives.
 
-**Save the file** (`Ctrl/Cmd + S`) when you're done, then continue.
+**Save the file** (`Ctrl/Cmd + S`) when you're done, then continue to Part 1.

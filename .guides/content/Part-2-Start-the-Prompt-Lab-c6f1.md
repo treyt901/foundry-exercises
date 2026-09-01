@@ -36,7 +36,8 @@ Score **70 or higher** to pass a challenge, then record it with the
 challenge page's **CHECK IT** button. You can run and refine as often as you
 like — **only your best score is kept**.
 
-> ⚠️ If a banner says the app isn't configured, go back one page and finish
-> your `.env`, then press **Restart the Prompt Lab** above.
+> ⚠️ If a banner says the app isn't configured, go back to the **Set up your
+> endpoint** page near the start of this guide, finish your `.env`, then press
+> **Restart the Prompt Lab** above.
 
 Ready? On to Challenge 1. ➡️

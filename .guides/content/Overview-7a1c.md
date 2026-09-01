@@ -33,7 +33,9 @@ exactly how to refine your prompt. Score **70+** on each challenge to pass it.
 | Challenge 2 — user prompt | 10 |
 | Challenge 3 — structured output | 10 |
 
-You can retry everything in Part 2 as many times as you like — only your
-**best** score is kept.
+The Part 1 quiz allows **one attempt per question**, so explore the catalog
+and be confident before you answer. Part 2 is the opposite: run and refine
+your prompts as many times as you like — only your **best** score is kept.
 
-Use the **Next** arrow at the bottom of this panel to begin Part 1.
+Use the **Next** arrow at the bottom of this panel to begin — first a quick
+one-time setup of your endpoint, then Part 1.

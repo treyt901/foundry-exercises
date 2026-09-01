@@ -45,7 +45,7 @@
 		"showGuidanceAfterResponseOption": {
 			"type": "Always"
 		},
-		"maxAttemptsCount": 3,
+		"maxAttemptsCount": 1,
 		"showExpectedAnswerOption": {
 			"type": "Never"
 		},
