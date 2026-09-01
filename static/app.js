@@ -2,7 +2,6 @@
 // Loads the challenge definitions from the Flask back end, lets the student
 // write prompts, and renders the grade + feedback that /api/grade returns.
 
-const tabsEl = document.getElementById("tabs");
 const bannerEl = document.getElementById("config-banner");
 const statusEl = document.getElementById("status");
 const gradeBtn = document.getElementById("grade-btn");
@@ -18,8 +17,6 @@ const resultsEl = document.getElementById("results");
 let passScore = 70;
 let challenges = [];
 let current = null;
-// Latest known grade per challenge id (for the nav badges).
-const bests = {};
 
 // --- Small helpers -----------------------------------------------------------
 
@@ -43,33 +40,11 @@ function setBusy(busy) {
     : "";
 }
 
-// --- Challenge nav ------------------------------------------------------------
-// Each challenge lives at its own URL (/challenge/1, /2, /3). In Codio the
-// guide opens the right page for you; this nav is a courtesy for anyone
-// moving around by hand, and it carries the best-score badges.
-
-function renderTabs() {
-  tabsEl.innerHTML = "";
-  for (const challenge of challenges) {
-    const tab = el("a", "tab", `Challenge ${challenge.id}`);
-    tab.href = `/challenge/${challenge.id}`;
-    const best = bests[challenge.id];
-    if (best) {
-      const badge = el(
-        "span",
-        "tab-badge " + (best.passed ? "pass" : "tried"),
-        best.passed ? `✓ ${best.total}` : `${best.total}`
-      );
-      tab.appendChild(badge);
-    }
-    if (current && current.id === challenge.id) tab.classList.add("active");
-    tabsEl.appendChild(tab);
-  }
-}
+// Each challenge lives at its own URL (/challenge/1, /2, /3) and there is no
+// in-app navigation: the Codio guide opens the right page for each challenge.
 
 function selectChallenge(id) {
   current = challenges.find((c) => c.id === id) || challenges[0];
-  renderTabs();
 
   document.getElementById("challenge-title").textContent =
     `Challenge ${current.id} — ${current.title}`;
@@ -269,11 +244,6 @@ gradeBtn.addEventListener("click", async () => {
       statusEl.textContent = data.error || "Something went wrong.";
       return;
     }
-    const best = bests[current.id];
-    if (!best || data.total > best.total) {
-      bests[current.id] = { total: data.total, passed: data.passed };
-    }
-    renderTabs();
     renderGrade(data);
   } catch (err) {
     statusEl.textContent = "Could not reach the server: " + err.message;
@@ -301,15 +271,9 @@ async function boot() {
   }
 
   try {
-    const [challengeData, resultData] = await Promise.all([
-      (await fetch("/api/challenges")).json(),
-      (await fetch("/api/results")).json(),
-    ]);
+    const challengeData = await (await fetch("/api/challenges")).json();
     passScore = challengeData.pass_score || passScore;
     challenges = challengeData.challenges;
-    for (const [id, record] of Object.entries(resultData)) {
-      bests[Number(id)] = record;
-    }
     // The Flask route tells the page which challenge it serves.
     selectChallenge(Number(window.CHALLENGE_ID) || challenges[0].id);
   } catch (err) {
