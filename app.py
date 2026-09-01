@@ -278,20 +278,27 @@ def run_student_prompts(client, challenge, system_prompt, user_prompt):
         transcripts.append({"user": user_prompt, "assistant": reply})
         return transcripts
 
-    # write == ["system", "user"]
-    full_user_prompt = user_prompt
-    if challenge.get("attachment"):
-        full_user_prompt = (
-            f"{user_prompt}\n\n--- Customer message ---\n{challenge['attachment']}"
+    # write == ["system", "user"]: run the pair against every test attachment,
+    # so the prompts have to hold up beyond the happy-path message.
+    attachments = challenge.get("attachments") or [
+        {"label": "", "text": challenge.get("attachment", "")}
+    ]
+    for attachment in attachments:
+        full_user_prompt = user_prompt
+        if attachment["text"]:
+            full_user_prompt = (
+                f"{user_prompt}\n\n--- Customer message ---\n{attachment['text']}"
+            )
+        reply = call_model(
+            client,
+            [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": full_user_prompt},
+            ],
         )
-    reply = call_model(
-        client,
-        [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": full_user_prompt},
-        ],
-    )
-    transcripts.append({"user": full_user_prompt, "assistant": reply})
+        transcripts.append(
+            {"label": attachment.get("label", ""), "user": full_user_prompt, "assistant": reply}
+        )
     return transcripts
 
 
@@ -329,21 +336,16 @@ def check_field_values(challenge, parsed):
     return blank_fields, invalid_values
 
 
-def check_output_format(challenge, transcripts):
-    """For challenges with json_keys: verify the reply is clean, typed JSON."""
-    required = challenge.get("json_keys")
-    if not required:
-        return None
-    reply = transcripts[-1]["assistant"].strip()
+def check_one_reply(challenge, required, reply):
+    """The format checks for a single model reply."""
     strictly_valid = True
     try:
-        parsed = json.loads(reply)
+        parsed = json.loads(reply.strip())
     except json.JSONDecodeError:
         strictly_valid = False  # extra prose or a markdown fence around it
         parsed = extract_json(reply)
     if not isinstance(parsed, dict):
         return {
-            "required_keys": required,
             "reply_is_valid_json": False,
             "reply_is_json_only": False,
             "missing_keys": required,
@@ -353,7 +355,6 @@ def check_output_format(challenge, transcripts):
         }
     blank_fields, invalid_values = check_field_values(challenge, parsed)
     return {
-        "required_keys": required,
         "reply_is_valid_json": True,
         "reply_is_json_only": strictly_valid,
         "missing_keys": [k for k in required if k not in parsed],
@@ -361,6 +362,25 @@ def check_output_format(challenge, transcripts):
         "blank_fields": blank_fields,
         "invalid_values": invalid_values,
     }
+
+
+def check_output_format(challenge, transcripts):
+    """For challenges with json_keys: verify EVERY reply is clean, typed JSON.
+
+    Returns {"required_keys": [...], "checks": [one entry per test message]}
+    so a prompt only fully passes when it holds up on all of them - including
+    the message with missing details (keys must survive as null) and the one
+    that baits numbers into the fields.
+    """
+    required = challenge.get("json_keys")
+    if not required:
+        return None
+    checks = []
+    for transcript in transcripts:
+        result = check_one_reply(challenge, required, transcript["assistant"])
+        result["label"] = transcript.get("label", "")
+        checks.append(result)
+    return {"required_keys": required, "checks": checks}
 
 
 def grade_with_model(client, challenge, system_prompt, user_prompt, transcripts, format_check):

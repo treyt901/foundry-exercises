@@ -16,7 +16,7 @@ The panel beside this page shows **Challenge 3**. A short user prompt is **alrea
 }
 ```
 
-The customer message shown in the brief is appended to the user prompt automatically — your system prompt has to work for *any* message that could arrive there, not just this one.
+Your prompts are tested against **three** customer messages (shown in the brief): a straightforward one, one with **missing details** — every key must still appear, using `null` — and one **full of numbers** trying to bait the wrong data types into your fields. Your system prompt has to hold up on all three.
 
 ### What usually goes wrong (and how to prompt against it)
 
@@ -29,7 +29,7 @@ The customer message shown in the brief is appended to the user prompt automatic
 | Blank values (`""`) | "Never leave a value empty — extract the information or use null." |
 | Wrong type or category (`"urgency": 2`, `"urgency": "ASAP"`) | "Every value must be text; sentiment and urgency must be exactly one of the allowed words." |
 
-Watch the **automatic format check** under your results — it tells you objectively whether your JSON parsed, and which keys were missing or extra.
+Watch the **automatic format check** under your results — one line per test message, telling you objectively whether the JSON parsed, whether every key was present, and whether any value was blank, the wrong type, or outside the allowed list.
 
 ### Pass it
 

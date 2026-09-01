@@ -99,8 +99,7 @@
       ],
       "goal": "Write a system prompt that turns the model into a reliable JSON extractor. The user prompt is just a short trigger — one is provided for you (you can tweak it) — so every rule has to live in your system prompt.",
       "scenario": "Bluff City Bikes gets support emails and wants to log them automatically. Your prompts must make the model read a customer message and return ONLY a JSON object your (imaginary) app could parse — no greetings, no explanations, no markdown fences.",
-      "attachment_label": "Customer message your prompts will be tested on",
-      "attachment": "Hi, this is Dana Whitfield. I bought the TrailBlazer 500 gravel bike from your Union Ave store three weeks ago, and the rear derailleur has already started slipping gears whenever I climb a hill. I ride to work every day, so I really need this sorted out before the weekend. Honestly pretty frustrated that a brand-new bike is doing this. — Dana",
+      "attachment_label": "Customer messages your prompts will be tested on",
       "json_keys": [
         "customer_name",
         "product",
@@ -111,8 +110,8 @@
       "requirements": [
         "Use the system prompt to define the job: a data-extraction assistant that outputs only a raw JSON object.",
         "Specify the exact schema in the system prompt: keys customer_name, product, issue, sentiment, urgency — and say what values are allowed (e.g. sentiment: positive/neutral/negative; urgency: low/medium/high).",
-        "Make it robust: say what to do when a field can't be found (e.g. use null), and forbid extra text or markdown code fences.",
-        "The provided user prompt is deliberately minimal — edit it if you like, but it shouldn't need to carry the rules. The customer message above is appended to the user prompt automatically."
+        "Make it robust: say what to do when a field can't be found (e.g. use null — but never drop the key), and forbid extra text or markdown code fences. One test message is missing details on purpose, and another tries to bait numbers into your fields.",
+        "The provided user prompt is deliberately minimal — edit it if you like, but it shouldn't need to carry the rules. Each customer message above is sent through your prompts automatically."
       ],
       "rubric": [
         {
@@ -137,7 +136,7 @@
           "key": "result",
           "name": "The output complies",
           "max": 25,
-          "description": "The model's reply is valid JSON with exactly the required keys, no blank values, and values of the right type from the allowed lists (see the automatic format check)."
+          "description": "EVERY test message produces valid JSON with exactly the required keys, no blank values, and text values from the allowed lists — even when details are missing (null, never a dropped key) or the message is full of numbers (see the automatic format check)."
         }
       ],
       "starter_user_prompt": "Log this customer message for our support system.",
@@ -167,7 +166,21 @@
             "high"
           ]
         }
-      }
+      },
+      "attachments": [
+        {
+          "label": "Test message 1 — everything you need is there",
+          "text": "Hi, this is Dana Whitfield. I bought the TrailBlazer 500 gravel bike from your Union Ave store three weeks ago, and the rear derailleur has already started slipping gears whenever I climb a hill. I ride to work every day, so I really need this sorted out before the weekend. Honestly pretty frustrated that a brand-new bike is doing this. — Dana"
+        },
+        {
+          "label": "Test message 2 — some details are missing",
+          "text": "Hi — I was in your Union Ave store this weekend and bought one of your bikes on sale. It's been making a clicking noise when I pedal, though honestly it's not a big deal, I mostly ride on weekends. Could someone take a look next time I'm in? Thanks!"
+        },
+        {
+          "label": "Test message 3 — numbers everywhere",
+          "text": "This is Marcus Lee. Order #4521: I bought 2 TrailBlazer 500s on August 15 and BOTH arrived with bent rims. I've called 3 times already. I need working bikes for a race in 2 days — fix this in 48 hours or refund me the $2,400. Extremely disappointed."
+        }
+      ]
     }
   ]
 }

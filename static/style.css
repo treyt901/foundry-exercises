@@ -404,3 +404,20 @@ body {
   font-size: 0.8rem;
   color: var(--muted);
 }
+
+.attachment-name {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.format-check-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.format-check-row {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}

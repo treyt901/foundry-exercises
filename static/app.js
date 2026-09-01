@@ -64,10 +64,22 @@ function selectChallenge(id) {
 
   // Attachment (challenge 3's customer message).
   const attachmentBox = document.getElementById("attachment-box");
-  if (current.attachment) {
+  const attachments =
+    current.attachments ||
+    (current.attachment ? [{ label: "", text: current.attachment }] : []);
+  if (attachments.length) {
     document.getElementById("attachment-label").textContent =
       current.attachment_label || "Provided text";
-    document.getElementById("attachment-text").textContent = current.attachment;
+    const listEl = document.getElementById("attachment-list");
+    listEl.innerHTML = "";
+    for (const attachment of attachments) {
+      if (attachment.label) {
+        listEl.appendChild(el("div", "attachment-name", attachment.label));
+      }
+      const pre = document.createElement("pre");
+      pre.textContent = attachment.text;
+      listEl.appendChild(pre);
+    }
     attachmentBox.classList.remove("hidden");
   } else {
     attachmentBox.classList.add("hidden");
@@ -201,36 +213,38 @@ function renderGrade(data) {
     transcriptsEl.appendChild(convo);
   }
 
-  // Format check (challenge 3).
+  // Format check (challenge 3): one line per test message.
   const fcEl = document.getElementById("format-check");
-  if (data.format_check) {
-    const fc = data.format_check;
-    const parts = [];
-    parts.push(fc.reply_is_valid_json ? "✔ reply parses as JSON" : "✘ reply is not valid JSON");
-    parts.push(
-      fc.reply_is_json_only
-        ? "✔ nothing but JSON in the reply"
-        : "✘ extra text or a code fence surrounds the JSON"
-    );
-    parts.push(
-      fc.missing_keys.length === 0
-        ? "✔ all required keys present"
-        : "✘ missing keys: " + fc.missing_keys.join(", ")
-    );
-    if (fc.extra_keys.length) parts.push("⚠ unexpected keys: " + fc.extra_keys.join(", "));
-    const blanks = fc.blank_fields || [];
-    parts.push(
-      blanks.length === 0
-        ? "✔ no blank values"
-        : "✘ blank values: " + blanks.join(", ")
-    );
-    const invalid = fc.invalid_values || [];
-    parts.push(
-      invalid.length === 0
-        ? "✔ values have the right type"
-        : "✘ wrong type or value — " + invalid.join("; ")
-    );
-    fcEl.textContent = "Automatic format check — " + parts.join("  ·  ");
+  if (data.format_check && data.format_check.checks) {
+    fcEl.innerHTML = "";
+    fcEl.appendChild(el("div", "format-check-title", "Automatic format check"));
+    data.format_check.checks.forEach((check, i) => {
+      const parts = [];
+      parts.push(check.reply_is_valid_json ? "✔ valid JSON" : "✘ not valid JSON");
+      parts.push(
+        check.reply_is_json_only
+          ? "✔ JSON only"
+          : "✘ extra text or a code fence around it"
+      );
+      parts.push(
+        check.missing_keys.length === 0
+          ? "✔ all keys present"
+          : "✘ missing keys: " + check.missing_keys.join(", ")
+      );
+      if (check.extra_keys.length) parts.push("⚠ unexpected keys: " + check.extra_keys.join(", "));
+      parts.push(
+        (check.blank_fields || []).length === 0
+          ? "✔ no blank values"
+          : "✘ blank values: " + check.blank_fields.join(", ")
+      );
+      parts.push(
+        (check.invalid_values || []).length === 0
+          ? "✔ right types & values"
+          : "✘ wrong type or value — " + check.invalid_values.join("; ")
+      );
+      const label = check.label || `Test message ${i + 1}`;
+      fcEl.appendChild(el("div", "format-check-row", label + ":  " + parts.join("  ·  ")));
+    });
     fcEl.classList.remove("hidden");
   } else {
     fcEl.classList.add("hidden");
