@@ -44,6 +44,12 @@ logging.getLogger("werkzeug").setLevel(logging.ERROR)
 
 app = Flask(__name__)
 
+# Re-read templates from disk on every request. Without this, Flask caches the
+# compiled template in memory for the life of the process, so a `git pull`
+# updates static/app.js (served from disk) but keeps serving the OLD page HTML
+# until a restart - the JS and HTML drift apart and the page breaks.
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+
 BASE_DIR = Path(__file__).resolve().parent
 RESULTS_DIR = BASE_DIR / "results"
 
