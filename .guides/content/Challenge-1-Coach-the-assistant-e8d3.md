@@ -28,8 +28,8 @@ decline and offer to help with…") tend to pass it.
 ### Pass it
 
 Press **▶ Run & grade my prompts**, read the feedback, refine, repeat. When
-your best score is **70+**, record it:
-
-{Check It!|assessment}(test-8823941675)
+the scorecard shows **PASSED (70+)**, this challenge is done — your best
+score is saved automatically and counts toward your grade when you mark the
+assignment complete.
 
 > Changed something in `.env`? {🔄 Restart the Prompt Lab}(bash lab.sh restart)

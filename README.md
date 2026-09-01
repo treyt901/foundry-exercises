@@ -37,14 +37,21 @@ Each **Run & grade** in the Prompt Lab:
    scores and computes the total itself.
 3. Saves the **best** result to `results/challenge_<id>.json` (gitignored).
 
-The Codio **Advanced Code Test** assessments run
-`.guides/secure/check_challenge.py <id>`, which passes when the saved best
-score meets `pass_score` (70, set in `challenges.json`) and otherwise prints
-the grader's feedback.
+Grades are recorded by an **assignment-level auto-grade script**
+(`.guides/secure/autograde.py`) that Codio runs when the student clicks
+**Mark as complete**: it reads the Part 1 quiz points from Codio's
+`CODIO_AUTOGRADE_ENV`, awards 10 points per challenge whose saved best score
+meets `pass_score` (70, set in `challenges.json`), and posts the combined
+percentage plus a markdown grade report to `CODIO_AUTOGRADE_V2_URL`.
+
+**One-time setup in the course:** in the assignment's settings, under
+grading/completion, enable running a custom script on assignment completion
+and set it to `python3 .guides/secure/autograde.py`. Without this, marking
+complete records no grade.
 
 > Note: grading uses an LLM as the judge, so scores vary slightly between
-> runs (the best score is kept). The checker trusts the results file on the
-> student's box — fine for a formative fundamentals lab, but not
+> runs (the best score is kept). The auto-grade script trusts the results
+> files on the student's box — fine for a formative fundamentals lab, but not
 > tamper-proof against a determined student with a terminal.
 
 ## Project layout
@@ -52,9 +59,9 @@ the grader's feedback.
 ```
 .codio                     Run-menu buttons + preview tab (port 5000)
 .guides/
-  assessments.json         7 multiple-choice Qs (Part 1) + 3 graded checks (Part 2)
+  assessments/             7 multiple-choice questions (Part 1), one file per task
   content/                 Guide pages (Codio book format)
-  secure/check_challenge.py  Assessment checker for the challenges
+  secure/autograde.py      Auto-grade script run on "Mark as complete"
 app.py                     Flask app: one page per challenge (/challenge/<id>), run + grade + save endpoints
 challenges.json            Challenge briefs, fixed prompts/messages, rubrics, pass score
 lab.sh / run.sh            Start/restart/stop the app (background, logs to .flask.log)

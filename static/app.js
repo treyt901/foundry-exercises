@@ -152,7 +152,7 @@ function renderGrade(data) {
   chip.textContent = data.passed ? "PASSED" : "KEEP REFINING";
   chip.className = "chip " + (data.passed ? "chip-pass" : "chip-fail");
   document.getElementById("pass-note").textContent = data.passed
-    ? "Nice — now click the challenge's Check It button in the guide."
+    ? "Nice — this challenge is done. Your best score is saved and counts toward your grade when you mark the assignment complete."
     : `You need ${data.pass_score} or more to pass. Use the feedback below, edit, and run again.`;
 
   // Per-criterion bars.

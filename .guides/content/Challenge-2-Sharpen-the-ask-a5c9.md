@@ -28,7 +28,6 @@ the first try.
 
 ### Pass it
 
-Press **▶ Run & grade my prompts**, refine with the feedback, and when your
-best score is **70+**:
-
-{Check It!|assessment}(test-4417820593)
+Press **▶ Run & grade my prompts** and refine with the feedback. When the
+scorecard shows **PASSED (70+)**, you're done — your best score is saved
+automatically.

@@ -4,7 +4,7 @@
 	"scripts": [],
 	"suppressPageNumbering": true,
 	"useSubmitButtons": true,
-	"useMarkAsComplete": false,
+	"useMarkAsComplete": true,
 	"hideMenu": false,
 	"allowGuideClose": false,
 	"collapsedOnStart": false,

@@ -33,7 +33,9 @@ exactly how to refine your prompt. Score **70+** on each challenge to pass it.
 | Challenge 2 — user prompt | 10 |
 | Challenge 3 — structured output | 10 |
 
-The Part 1 quiz allows **one attempt per question**, so explore the catalog
+Your grade is recorded when you **mark the assignment complete** at the end
+(you can re-open, improve, and complete it again to update it). The Part 1
+quiz allows **one attempt per question**, so explore the catalog
 and be confident before you answer. Part 2 is the opposite: run and refine
 your prompts as many times as you like — only your **best** score is kept.
 

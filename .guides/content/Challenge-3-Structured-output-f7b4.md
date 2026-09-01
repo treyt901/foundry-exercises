@@ -41,6 +41,5 @@ objectively whether your JSON parsed, and which keys were missing or extra.
 
 ### Pass it
 
-When your best score is **70+**:
-
-{Check It!|assessment}(test-1098273465)
+When the scorecard shows **PASSED (70+)**, you're done — your best score is
+saved automatically.

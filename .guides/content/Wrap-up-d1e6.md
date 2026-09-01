@@ -19,10 +19,12 @@ You've covered the two halves of working with AI models on Azure:
   attempt one — you iterated with feedback, which is exactly how prompt
   engineering works in practice.
 
-### Check your scores
+### Record your grade
 
-Make sure every **CHECK IT** in Part 1 and on the three challenge pages has
-been run — that's what records your grade.
+Check that all three challenges show **PASSED** in the Prompt Lab, then click
+**Mark as complete** — that submits the assignment and records your quiz and
+challenge scores as your grade. (You can re-open the assignment, improve, and
+mark it complete again to update your grade.)
 
 ### Troubleshooting
 
@@ -32,7 +34,7 @@ been run — that's what records your grade.
 | "Azure OpenAI request failed" | Check your endpoint URL and key, and that `AZURE_OPENAI_DEPLOYMENT` matches your deployment name exactly. |
 | Preview panel is blank | Wait for **✅ Prompt Lab is running** in the terminal, then click **refresh** in the preview panel. |
 | "The grader reply could not be parsed" | Occasional model hiccup — press **Run & grade** again. |
-| A CHECK IT says "No graded attempt found" | Run & grade that challenge in the Prompt Lab first, then re-check. |
+| Grade report says "no graded attempt" | Run & grade that challenge in the Prompt Lab first, then mark complete again. |
 
 ### Stop the app
 

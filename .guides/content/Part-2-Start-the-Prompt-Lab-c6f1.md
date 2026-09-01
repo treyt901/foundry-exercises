@@ -32,9 +32,9 @@ Each run makes two kinds of calls to your deployment:
    rubric and writes you feedback: what worked, and **specific edits to make
    your prompt better**.
 
-Score **70 or higher** to pass a challenge, then record it with the
-challenge page's **CHECK IT** button. You can run and refine as often as you
-like — **only your best score is kept**.
+Score **70 or higher** to pass a challenge. You can run and refine as often
+as you like — **only your best score is kept**, and it counts toward your
+grade automatically when you mark the assignment complete at the end.
 
 > ⚠️ If a banner says the app isn't configured, go back to the **Set up your
 > endpoint** page near the start of this guide, finish your `.env`, then press
