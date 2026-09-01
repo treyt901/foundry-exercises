@@ -5,6 +5,7 @@
 # Runtime files created by lab.sh / the Flask app.
 .flask.pid
 .flask.log
+.pip.lock
 
 # Per-student grading results written by the Prompt Lab.
 results/

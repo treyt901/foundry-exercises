@@ -14,6 +14,7 @@ cd "$(dirname "$0")"
 PORT="${PORT:-5000}"
 PIDFILE=".flask.pid"
 LOGFILE=".flask.log"
+DEPSLOCK=".pip.lock"
 
 # --- Find the Python to use (needs 3.8+ for the Azure OpenAI SDK) -----------
 # Prefer an interpreter that ALREADY has the dependencies (the one the stack
@@ -77,14 +78,34 @@ require_python() {
   fi
 }
 
+deps_present() {
+  "$PY" -c "import flask, openai, dotenv" >/dev/null 2>&1
+}
+
 ensure_deps() {
   # Install dependencies quietly, and only if they aren't already present.
-  if ! "$PY" -c "import flask, openai, dotenv" >/dev/null 2>&1; then
+  # The install is serialized with flock: the setup guide page starts it in a
+  # terminal when it opens (bash lab.sh prepare), and guide BUTTONS run with a
+  # short timeout Codio doesn't let us extend — so if an install is already
+  # running elsewhere, a button politely says "wait" instead of colliding
+  # with it or being killed mid-install.
+  deps_present && return 0
+  if command -v flock >/dev/null 2>&1; then
     echo "⏳ Preparing the app (first run only)…"
-    if ! "$PY" -m pip install -q -r requirements.txt >"$LOGFILE" 2>&1; then
-      echo "❌ Could not install dependencies. See .flask.log for details."
+    flock -n -E 200 "$DEPSLOCK" "$PY" -m pip install -q -r requirements.txt >>"$LOGFILE" 2>&1
+    status=$?
+    if [ "$status" -eq 200 ]; then
+      echo "⏳ The app's tools are still being installed (see the setup page's"
+      echo "   terminal). Give it a minute, then try again."
       return 1
     fi
+  else
+    echo "⏳ Preparing the app (first run only)…"
+    "$PY" -m pip install -q -r requirements.txt >>"$LOGFILE" 2>&1
+  fi
+  if ! deps_present; then
+    echo "❌ Could not install dependencies. See .flask.log for details."
+    return 1
   fi
 }
 
@@ -146,8 +167,20 @@ case "$ACTION" in
     # One-shot check that the student's .env actually reaches their deployment.
     require_python && ensure_deps && "$PY" test_connection.py
     ;;
+  prepare)
+    # Install the app's tools ahead of time. The setup guide page runs this in
+    # a terminal when it opens, so the slow first-time install happens while
+    # the student fills in .env — not inside a guide button's timeout window.
+    if require_python; then
+      if deps_present; then
+        echo "✅ The app's tools are already installed — you're all set."
+      elif ensure_deps; then
+        echo "✅ Setup finished. Fill in your .env, then press \"Test my connection\"."
+      fi
+    fi
+    ;;
   *)
-    echo "Usage: bash lab.sh [start|restart|stop|status|test]  (got: '$ACTION')"
+    echo "Usage: bash lab.sh [start|restart|stop|status|test|prepare]  (got: '$ACTION')"
     exit 1
     ;;
 esac

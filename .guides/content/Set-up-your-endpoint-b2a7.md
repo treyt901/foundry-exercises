@@ -35,5 +35,6 @@ you exactly what to fix if anything is wrong:
   Edit, save, and test again. Don't move on until the test passes — everything
   in Part 2 depends on this connection.
 
-> The very first test may take a minute — it also installs the app's
-> dependencies.
+> A small terminal opened with this page — it's installing the app's tools in
+> the background (first time only). If the test button says the tools are
+> still being installed, wait for that terminal to show a ✅ and try again.
